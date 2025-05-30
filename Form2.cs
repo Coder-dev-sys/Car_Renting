@@ -19,7 +19,15 @@ namespace WindowsFormsApp1
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-
+            if (txtFullName.Text == "" && txtAddress.Text == "" && txtMobileNo.Text == "" && txtPwd.Text == "" && txtUsername.Text == "")
+            {
+                MessageBox.Show("Fill All Input Box !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Form1 fm = new Form1();
+                fm.Show();
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)

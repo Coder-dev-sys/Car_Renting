@@ -19,12 +19,13 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text!="" && txtPwd.Text!="")   {
-
+            if(txtUsername.Text=="" && txtPwd.Text=="")   
+            { 
+                MessageBox.Show("Enter Both Input Box !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Enter Both Input Box !", "Error", MessageBoxButtons.OK , MessageBoxIcon.Error);
+
             }
         }
 

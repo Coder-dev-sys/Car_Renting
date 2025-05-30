@@ -28,218 +28,228 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtPwd = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            btnCancel = new Button();
+            buttonRegister = new Button();
+            btnLogin = new Button();
+            txtPwd = new TextBox();
+            txtUsername = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panel1 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            panel2 = new Panel();
+            label8 = new Label();
+            groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.buttonRegister);
-            this.groupBox1.Controls.Add(this.btnLogin);
-            this.groupBox1.Controls.Add(this.txtPwd);
-            this.groupBox1.Controls.Add(this.txtUsername);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.groupBox1.Location = new System.Drawing.Point(875, 301);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1153, 783);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            groupBox1.Controls.Add(btnCancel);
+            groupBox1.Controls.Add(buttonRegister);
+            groupBox1.Controls.Add(btnLogin);
+            groupBox1.Controls.Add(txtPwd);
+            groupBox1.Controls.Add(txtUsername);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.YellowGreen;
+            groupBox1.Location = new Point(930, 398);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(1225, 1036);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Font = new System.Drawing.Font("Trebuchet MS", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Beige;
-            this.btnCancel.Location = new System.Drawing.Point(682, 509);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(307, 98);
-            this.btnCancel.TabIndex = 8;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.BackColor = SystemColors.ActiveCaptionText;
+            btnCancel.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = Color.Beige;
+            btnCancel.Location = new Point(725, 673);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(326, 130);
+            btnCancel.TabIndex = 8;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // buttonRegister
             // 
-            this.buttonRegister.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonRegister.Font = new System.Drawing.Font("Trebuchet MS", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegister.ForeColor = System.Drawing.Color.YellowGreen;
-            this.buttonRegister.Location = new System.Drawing.Point(272, 680);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(607, 65);
-            this.buttonRegister.TabIndex = 7;
-            this.buttonRegister.Text = "Don\'t Have An Account ? ";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            buttonRegister.BackColor = SystemColors.Control;
+            buttonRegister.Font = new Font("Trebuchet MS", 9.900001F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonRegister.ForeColor = Color.YellowGreen;
+            buttonRegister.Location = new Point(289, 899);
+            buttonRegister.Margin = new Padding(3, 4, 3, 4);
+            buttonRegister.Name = "buttonRegister";
+            buttonRegister.Size = new Size(645, 86);
+            buttonRegister.TabIndex = 7;
+            buttonRegister.Text = "Don't Have An Account ? ";
+            buttonRegister.UseVisualStyleBackColor = false;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Beige;
-            this.btnLogin.Location = new System.Drawing.Point(127, 509);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(307, 98);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            btnLogin.BackColor = SystemColors.ActiveCaptionText;
+            btnLogin.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.Beige;
+            btnLogin.Location = new Point(135, 673);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(326, 130);
+            btnLogin.TabIndex = 6;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // txtPwd
             // 
-            this.txtPwd.Font = new System.Drawing.Font("Trebuchet MS", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPwd.Location = new System.Drawing.Point(609, 356);
-            this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(484, 50);
-            this.txtPwd.TabIndex = 5;
+            txtPwd.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPwd.Location = new Point(647, 471);
+            txtPwd.Margin = new Padding(3, 4, 3, 4);
+            txtPwd.Name = "txtPwd";
+            txtPwd.Size = new Size(514, 50);
+            txtPwd.TabIndex = 5;
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Trebuchet MS", 11.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(609, 174);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(484, 50);
-            this.txtUsername.TabIndex = 4;
+            txtUsername.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsername.Location = new Point(647, 230);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(514, 50);
+            txtUsername.TabIndex = 4;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(484, 357);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 49);
-            this.label4.TabIndex = 3;
-            this.label4.Text = ":";
+            label4.AutoSize = true;
+            label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.ControlText;
+            label4.Location = new Point(514, 472);
+            label4.Name = "label4";
+            label4.Size = new Size(37, 49);
+            label4.TabIndex = 3;
+            label4.Text = ":";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(484, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 49);
-            this.label3.TabIndex = 2;
-            this.label3.Text = ":";
+            label3.AutoSize = true;
+            label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlText;
+            label3.Location = new Point(514, 231);
+            label3.Name = "label3";
+            label3.Size = new Size(37, 49);
+            label3.TabIndex = 2;
+            label3.Text = ":";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(127, 357);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 49);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            label2.AutoSize = true;
+            label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ControlText;
+            label2.Location = new Point(135, 472);
+            label2.Name = "label2";
+            label2.Size = new Size(192, 49);
+            label2.TabIndex = 1;
+            label2.Text = "Password";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(127, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 49);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            label1.AutoSize = true;
+            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlText;
+            label1.Location = new Point(135, 231);
+            label1.Name = "label1";
+            label1.Size = new Size(208, 49);
+            label1.TabIndex = 0;
+            label1.Text = "Username";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(2, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 1176);
-            this.panel1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Beige;
-            this.label5.Location = new System.Drawing.Point(196, 321);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(244, 102);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Login";
+            panel1.BackColor = Color.Maroon;
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Location = new Point(2, -1);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(707, 1555);
+            panel1.TabIndex = 1;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 11.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Beige;
-            this.label6.Location = new System.Drawing.Point(188, 630);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(269, 92);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Hello Friend !\r\nWelcome Back\r\n";
+            label6.AutoSize = true;
+            label6.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Beige;
+            label6.Location = new Point(200, 833);
+            label6.Name = "label6";
+            label6.Size = new Size(269, 92);
+            label6.TabIndex = 1;
+            label6.Text = "Hello Friend !\r\nWelcome Back\r\n";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BorderStyle = BorderStyle.Fixed3D;
+            label5.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Beige;
+            label5.Location = new Point(208, 425);
+            label5.Name = "label5";
+            label5.Size = new Size(244, 102);
+            label5.TabIndex = 0;
+            label5.Text = "Login";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(673, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1487, 221);
-            this.panel2.TabIndex = 2;
+            panel2.BackColor = Color.Maroon;
+            panel2.Controls.Add(label8);
+            panel2.Location = new Point(715, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1580, 292);
+            panel2.TabIndex = 2;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 20.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Beige;
-            this.label8.Location = new System.Drawing.Point(460, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(645, 84);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Car Renting System";
+            label8.AutoSize = true;
+            label8.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Beige;
+            label8.Location = new Point(489, 91);
+            label8.Name = "label8";
+            label8.Size = new Size(645, 84);
+            label8.TabIndex = 0;
+            label8.Text = "Car Renting System";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(2172, 1171);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Car Rental System";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(2308, 1549);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(groupBox1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Car Rentals";
+            WindowState = FormWindowState.Maximized;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
 
         }
 
