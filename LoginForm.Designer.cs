@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -117,6 +117,7 @@
             txtPwd.Location = new Point(647, 471);
             txtPwd.Margin = new Padding(3, 4, 3, 4);
             txtPwd.Name = "txtPwd";
+            txtPwd.PasswordChar = '●';
             txtPwd.Size = new Size(514, 50);
             txtPwd.TabIndex = 5;
             // 
@@ -228,7 +229,7 @@
             label8.TabIndex = 0;
             label8.Text = "Car Renting System";
             // 
-            // Form1
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -239,7 +240,7 @@
             Controls.Add(panel1);
             Controls.Add(groupBox1);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals";
             WindowState = FormWindowState.Maximized;

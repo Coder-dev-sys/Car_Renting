@@ -7,21 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text=="" && txtPwd.Text=="")   
-            { 
+            if (txtUsername.Text == "" || txtPwd.Text == "")
+            {
                 MessageBox.Show("Enter Both Input Box !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtUsername.Text == "admin" || txtPwd.Text=="admin123@")
+            {
+                AdminDashboard adm = new AdminDashboard();
+                this.Hide();
+                adm.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -37,8 +45,10 @@ namespace WindowsFormsApp1
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            Form2 fm = new Form2();
-            fm.Show();
+            RegistrationForm fm = new RegistrationForm();
+            this.Hide();
+            fm.ShowDialog();
+            this.Close();
         }
     }
 }

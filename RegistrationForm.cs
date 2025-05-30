@@ -10,23 +10,25 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class RegistrationForm : Form
     {
-        public Form2()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtFullName.Text == "" && txtAddress.Text == "" && txtMobileNo.Text == "" && txtPwd.Text == "" && txtUsername.Text == "")
+            if (txtFullName.Text == "" || txtAddress.Text == "" || txtMobileNo.Text == "" || txtPwd.Text == "" || txtUsername.Text == "")
             {
                 MessageBox.Show("Fill All Input Box !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                Form1 fm = new Form1();
-                fm.Show();
+                LoginForm fm = new LoginForm();
+                this.Hide();
+                fm.ShowDialog();
+                this.Close();
             }
         }
 
