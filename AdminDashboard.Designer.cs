@@ -30,6 +30,7 @@
         {
             groupBox1 = new GroupBox();
             label5 = new Label();
+            btnLogout = new Button();
             btnTotalInccome = new Button();
             label4 = new Label();
             btnCustomerMng = new Button();
@@ -39,7 +40,6 @@
             btnRentalMng = new Button();
             label1 = new Label();
             btnCarMng = new Button();
-            btnLogout = new Button();
             panel1 = new Panel();
             label6 = new Label();
             groupBox1.SuspendLayout();
@@ -48,7 +48,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.Gainsboro;
             groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(btnLogout);
             groupBox1.Controls.Add(btnTotalInccome);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(btnCustomerMng);
@@ -61,7 +63,7 @@
             groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold);
             groupBox1.Location = new Point(150, 523);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(2035, 635);
+            groupBox1.Size = new Size(2035, 768);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
@@ -74,6 +76,19 @@
             label5.Size = new Size(260, 49);
             label5.TabIndex = 9;
             label5.Text = "Total Income";
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.Crimson;
+            btnLogout.Font = new Font("Trebuchet MS", 11.1F);
+            btnLogout.ForeColor = SystemColors.Control;
+            btnLogout.Location = new Point(1735, 654);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(279, 93);
+            btnLogout.TabIndex = 10;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnTotalInccome
             // 
@@ -94,9 +109,9 @@
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label4.Location = new Point(432, 360);
             label4.Name = "label4";
-            label4.Size = new Size(448, 49);
+            label4.Size = new Size(436, 49);
             label4.TabIndex = 7;
-            label4.Text = "Customer Management";
+            label4.Text = "Customer Registration";
             // 
             // btnCustomerMng
             // 
@@ -177,19 +192,6 @@
             btnCarMng.UseVisualStyleBackColor = false;
             btnCarMng.Click += btnCarMng_Click;
             // 
-            // btnLogout
-            // 
-            btnLogout.BackColor = Color.Crimson;
-            btnLogout.Font = new Font("Trebuchet MS", 11.1F);
-            btnLogout.ForeColor = SystemColors.Control;
-            btnLogout.Location = new Point(1906, 348);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(279, 93);
-            btnLogout.TabIndex = 10;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = false;
-            btnLogout.Click += btnLogout_Click;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(63, 81, 181);
@@ -215,9 +217,8 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2308, 1220);
+            ClientSize = new Size(2308, 1386);
             Controls.Add(panel1);
-            Controls.Add(btnLogout);
             Controls.Add(groupBox1);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;

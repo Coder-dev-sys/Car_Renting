@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WinFormsApp1
 {
-    public partial class CarManagement : Form
+    public partial class UserManagement : Form
     {
-        public CarManagement()
+        public UserManagement()
         {
             InitializeComponent();
             CenterGroupBox();
@@ -41,26 +39,6 @@ namespace WinFormsApp1
             panel1.Top = (this.ClientSize.Height - panel1.Height) / 11;
         }
 
-        private void btnUpImage_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                btnUpImage.Text = ofd.FileName;
-            }
-        }
-
-        //  Convert Image to byte[] to store in DB
-        public byte[] ImageToByteArray(Image img)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, img.RawFormat);
-                return ms.ToArray();
-            }
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
 
@@ -83,12 +61,9 @@ namespace WinFormsApp1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtRegNo.Clear();
-            txtBrand.Clear();
-            txtModel.Clear();
-            txtRent.Clear();
-            chkAvailability.Items.Clear();
-            btnUpImage.Text = "Upload Image";
+            txtCustId.Clear();
+            txtUsername.Clear();
+            txtPassword.Clear();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -100,5 +75,3 @@ namespace WinFormsApp1
         }
     }
 }
-
-// cmd.Parameters.AddWithValue("@img", imgBytes);

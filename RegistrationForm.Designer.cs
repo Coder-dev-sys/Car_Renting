@@ -242,7 +242,7 @@
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(326, 130);
             btnReset.TabIndex = 8;
-            btnReset.Text = "Reset";
+            btnReset.Text = "Clear";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;
             // 
