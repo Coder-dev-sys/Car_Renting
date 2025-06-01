@@ -16,6 +16,18 @@ namespace WindowsFormsApp1
         public LoginForm()
         {
             InitializeComponent();
+            CenterGroupBox();
+            this.Resize += (s, e) => CenterGroupBox();
+        }
+        private void CenterGroupBox()
+        {
+            // Horizontally center
+            groupBox1.Left = (this.ClientSize.Width - groupBox1.Width) / 2;
+            panel2.Left = (this.ClientSize.Width - groupBox1.Width) / 2;
+
+            // Vertically center
+            groupBox1.Top = (this.ClientSize.Height - groupBox1.Height) / 2;
+            panel2.Top = (this.ClientSize.Height - groupBox1.Height) / 5;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -24,7 +36,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Enter Both Input Box !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtUsername.Text == "admin" || txtPwd.Text=="admin123@")
+            else if (txtUsername.Text == "admin" || txtPwd.Text == "admin123@")
             {
                 AdminDashboard adm = new AdminDashboard();
                 this.Hide();

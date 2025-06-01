@@ -15,6 +15,18 @@ namespace WindowsFormsApp1
         public RegistrationForm()
         {
             InitializeComponent();
+            CenterGroupBox();
+            this.Resize += (s, e) => CenterGroupBox();
+        }
+        private void CenterGroupBox()
+        {
+            // Horizontally center
+            groupBox1.Left = (this.ClientSize.Width - groupBox1.Width) / 2;
+            panel2.Left = (this.ClientSize.Width - groupBox1.Width) / 2;
+
+            // Vertically center
+            groupBox1.Top = (this.ClientSize.Height - groupBox1.Height) / 2;
+            panel2.Top = (this.ClientSize.Height - groupBox1.Height) / 11;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -39,6 +51,7 @@ namespace WindowsFormsApp1
             txtMobileNo.Clear();
             txtFullName.Clear();
             txtAddress.Clear();
+            txtConfPwd.Clear();
         }
     }
 }

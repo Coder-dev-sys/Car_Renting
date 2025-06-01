@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            label8 = new Label();
             groupBox1 = new GroupBox();
             label5 = new Label();
             btnTotalInccome = new Button();
@@ -42,30 +40,11 @@
             label1 = new Label();
             btnCarMng = new Button();
             btnLogout = new Button();
-            panel2.SuspendLayout();
+            panel1 = new Panel();
+            label6 = new Label();
             groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Maroon;
-            panel2.Controls.Add(label8);
-            panel2.Location = new Point(12, 13);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(2284, 203);
-            panel2.TabIndex = 3;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Beige;
-            label8.Location = new Point(962, 58);
-            label8.Name = "label8";
-            label8.Size = new Size(364, 84);
-            label8.TabIndex = 0;
-            label8.Text = "Dashboard";
             // 
             // groupBox1
             // 
@@ -203,7 +182,7 @@
             btnLogout.BackColor = Color.Crimson;
             btnLogout.Font = new Font("Trebuchet MS", 11.1F);
             btnLogout.ForeColor = SystemColors.Control;
-            btnLogout.Location = new Point(2017, 223);
+            btnLogout.Location = new Point(1906, 348);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(279, 93);
             btnLogout.TabIndex = 10;
@@ -211,29 +190,47 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(63, 81, 181);
+            panel1.Controls.Add(label6);
+            panel1.Location = new Point(150, 34);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(2035, 292);
+            panel1.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
+            label6.ForeColor = Color.Beige;
+            label6.Location = new Point(816, 87);
+            label6.Name = "label6";
+            label6.Size = new Size(367, 89);
+            label6.TabIndex = 0;
+            label6.Text = "Dashboard";
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2308, 1220);
+            Controls.Add(panel1);
             Controls.Add(btnLogout);
             Controls.Add(groupBox1);
-            Controls.Add(panel2);
             Name = "AdminDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals";
             WindowState = FormWindowState.Maximized;
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel2;
-        private Label label8;
         private GroupBox groupBox1;
         private Label label1;
         private Button btnCarMng;
@@ -246,5 +243,7 @@
         private Label label4;
         private Button btnCustomerMng;
         private Button btnLogout;
+        private Panel panel1;
+        private Label label6;
     }
 }

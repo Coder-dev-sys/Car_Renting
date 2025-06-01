@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            txtFullName = new TextBox();
+            txtConfPwd = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
             txtPwd = new TextBox();
             txtUsername = new TextBox();
             txtAddress = new TextBox();
             txtMobileNo = new TextBox();
-            txtFullName = new TextBox();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
@@ -46,23 +49,23 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            panel1 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
             panel2 = new Panel();
             label8 = new Label();
             groupBox1.SuspendLayout();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.Gainsboro;
+            groupBox1.Controls.Add(txtFullName);
+            groupBox1.Controls.Add(txtConfPwd);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(txtPwd);
             groupBox1.Controls.Add(txtUsername);
             groupBox1.Controls.Add(txtAddress);
             groupBox1.Controls.Add(txtMobileNo);
-            groupBox1.Controls.Add(txtFullName);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label11);
@@ -75,15 +78,55 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = Color.YellowGreen;
-            groupBox1.Location = new Point(930, 300);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Font = new Font("Trebuchet MS", 10F, FontStyle.Bold);
+            groupBox1.ForeColor = SystemColors.ControlText;
+            groupBox1.Location = new Point(450, 373);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(1225, 1184);
-            groupBox1.TabIndex = 1;
+            groupBox1.Size = new Size(1225, 1383);
+            groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
+            // 
+            // txtFullName
+            // 
+            txtFullName.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtFullName.Location = new Point(696, 101);
+            txtFullName.Margin = new Padding(75, 115, 0, 4);
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new Size(484, 50);
+            txtFullName.TabIndex = 23;
+            // 
+            // txtConfPwd
+            // 
+            txtConfPwd.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtConfPwd.Location = new Point(696, 1006);
+            txtConfPwd.Margin = new Padding(3, 4, 3, 4);
+            txtConfPwd.Name = "txtConfPwd";
+            txtConfPwd.PasswordChar = '●';
+            txtConfPwd.Size = new Size(484, 50);
+            txtConfPwd.TabIndex = 22;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.ControlText;
+            label6.Location = new Point(542, 1007);
+            label6.Name = "label6";
+            label6.Size = new Size(37, 49);
+            label6.TabIndex = 21;
+            label6.Text = ":";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ControlText;
+            label5.Location = new Point(101, 1007);
+            label5.Name = "label5";
+            label5.Size = new Size(353, 49);
+            label5.TabIndex = 20;
+            label5.Text = "Confirm Password";
             // 
             // txtPwd
             // 
@@ -91,6 +134,7 @@
             txtPwd.Location = new Point(696, 828);
             txtPwd.Margin = new Padding(3, 4, 3, 4);
             txtPwd.Name = "txtPwd";
+            txtPwd.PasswordChar = '●';
             txtPwd.Size = new Size(484, 50);
             txtPwd.TabIndex = 19;
             // 
@@ -121,15 +165,6 @@
             txtMobileNo.Name = "txtMobileNo";
             txtMobileNo.Size = new Size(484, 50);
             txtMobileNo.TabIndex = 16;
-            // 
-            // txtFullName
-            // 
-            txtFullName.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtFullName.Location = new Point(696, 101);
-            txtFullName.Margin = new Padding(3, 4, 3, 4);
-            txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(484, 50);
-            txtFullName.TabIndex = 15;
             // 
             // label13
             // 
@@ -199,10 +234,10 @@
             // 
             // btnReset
             // 
-            btnReset.BackColor = SystemColors.ActiveCaptionText;
+            btnReset.BackColor = Color.FromArgb(63, 81, 181);
             btnReset.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.Beige;
-            btnReset.Location = new Point(743, 989);
+            btnReset.Location = new Point(743, 1169);
             btnReset.Margin = new Padding(3, 4, 3, 4);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(326, 130);
@@ -213,10 +248,10 @@
             // 
             // btnRegister
             // 
-            btnRegister.BackColor = SystemColors.ActiveCaptionText;
+            btnRegister.BackColor = Color.FromArgb(63, 81, 181);
             btnRegister.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegister.ForeColor = Color.Beige;
-            btnRegister.Location = new Point(172, 989);
+            btnRegister.Location = new Point(172, 1169);
             btnRegister.Margin = new Padding(3, 4, 3, 4);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(326, 130);
@@ -269,77 +304,41 @@
             label1.TabIndex = 0;
             label1.Text = "Username";
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Maroon;
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Location = new Point(1, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(707, 1547);
-            panel1.TabIndex = 2;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Beige;
-            label6.Location = new Point(165, 831);
-            label6.Name = "label6";
-            label6.Size = new Size(258, 92);
-            label6.TabIndex = 1;
-            label6.Text = "Hello Friend !\r\nWelcome \r\n";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BorderStyle = BorderStyle.Fixed3D;
-            label5.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Beige;
-            label5.Location = new Point(86, 412);
-            label5.Name = "label5";
-            label5.Size = new Size(492, 102);
-            label5.TabIndex = 0;
-            label5.Text = "Registration";
-            // 
             // panel2
             // 
-            panel2.BackColor = Color.Maroon;
+            panel2.BackColor = Color.FromArgb(63, 81, 181);
             panel2.Controls.Add(label8);
-            panel2.Location = new Point(715, 0);
+            panel2.Location = new Point(450, 13);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1580, 292);
-            panel2.TabIndex = 3;
+            panel2.Size = new Size(1225, 292);
+            panel2.TabIndex = 20;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
             label8.ForeColor = Color.Beige;
-            label8.Location = new Point(489, 91);
+            label8.Location = new Point(301, 96);
             label8.Name = "label8";
-            label8.Size = new Size(645, 84);
+            label8.Size = new Size(628, 89);
             label8.TabIndex = 0;
             label8.Text = "Car Renting System";
             // 
-            // Form2
+            // RegistrationForm
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2308, 1549);
+            ClientSize = new Size(2308, 1803);
             Controls.Add(panel2);
-            Controls.Add(panel1);
             Controls.Add(groupBox1);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form2";
-            Text = "Car Rentals";
+            Name = "RegistrationForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Car Rentals - Registration";
             WindowState = FormWindowState.Maximized;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -355,11 +354,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -367,9 +361,14 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtMobileNo;
-        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private Panel panel2;
+        private Label label8;
+        private TextBox txtConfPwd;
+        private Label label6;
+        private Label label5;
+        private TextBox txtFullName;
     }
 }
