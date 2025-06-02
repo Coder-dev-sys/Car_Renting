@@ -36,24 +36,18 @@
             btnDelete = new Button();
             btnUpdate = new Button();
             btnInsert = new Button();
-            btnUpImage = new Button();
             chkAvailability = new ComboBox();
             txtRent = new TextBox();
             txtModel = new TextBox();
-            txtRegNo = new TextBox();
-            label12 = new Label();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
-            label8 = new Label();
             txtBrand = new TextBox();
             label13 = new Label();
-            label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            label1 = new Label();
             panel1 = new Panel();
             label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -76,11 +70,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.BackgroundColor = Color.Gainsboro;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(1173, 523);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
+            dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1123, 1388);
             dataGridView1.TabIndex = 13;
             // 
@@ -93,24 +90,18 @@
             groupBox1.Controls.Add(btnUpdate);
             groupBox1.Controls.Add(btnBack);
             groupBox1.Controls.Add(btnInsert);
-            groupBox1.Controls.Add(btnUpImage);
             groupBox1.Controls.Add(chkAvailability);
             groupBox1.Controls.Add(txtRent);
             groupBox1.Controls.Add(txtModel);
-            groupBox1.Controls.Add(txtRegNo);
-            groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(txtBrand);
             groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 523);
             groupBox1.Name = "groupBox1";
@@ -188,20 +179,6 @@
             btnInsert.UseVisualStyleBackColor = false;
             btnInsert.Click += btnInsert_Click;
             // 
-            // btnUpImage
-            // 
-            btnUpImage.BackColor = Color.DodgerBlue;
-            btnUpImage.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpImage.ForeColor = Color.Beige;
-            btnUpImage.Location = new Point(585, 729);
-            btnUpImage.Margin = new Padding(3, 4, 3, 4);
-            btnUpImage.Name = "btnUpImage";
-            btnUpImage.Size = new Size(484, 87);
-            btnUpImage.TabIndex = 35;
-            btnUpImage.Text = "Upload Image";
-            btnUpImage.UseVisualStyleBackColor = false;
-            btnUpImage.Click += btnUpImage_Click;
-            // 
             // chkAvailability
             // 
             chkAvailability.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -219,6 +196,7 @@
             txtRent.Location = new Point(585, 467);
             txtRent.Margin = new Padding(75, 115, 0, 4);
             txtRent.Name = "txtRent";
+            txtRent.PlaceholderText = "950";
             txtRent.Size = new Size(484, 50);
             txtRent.TabIndex = 32;
             // 
@@ -228,28 +206,9 @@
             txtModel.Location = new Point(585, 325);
             txtModel.Margin = new Padding(75, 115, 0, 4);
             txtModel.Name = "txtModel";
+            txtModel.PlaceholderText = "City";
             txtModel.Size = new Size(484, 50);
             txtModel.TabIndex = 31;
-            // 
-            // txtRegNo
-            // 
-            txtRegNo.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRegNo.Location = new Point(585, 65);
-            txtRegNo.Margin = new Padding(75, 115, 0, 4);
-            txtRegNo.Name = "txtRegNo";
-            txtRegNo.Size = new Size(484, 50);
-            txtRegNo.TabIndex = 30;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = SystemColors.ControlText;
-            label12.Location = new Point(470, 742);
-            label12.Name = "label12";
-            label12.Size = new Size(37, 49);
-            label12.TabIndex = 29;
-            label12.Text = ":";
             // 
             // label11
             // 
@@ -284,23 +243,13 @@
             label9.TabIndex = 26;
             label9.Text = ":";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.ControlText;
-            label8.Location = new Point(470, 66);
-            label8.Name = "label8";
-            label8.Size = new Size(37, 49);
-            label8.TabIndex = 25;
-            label8.Text = ":";
-            // 
             // txtBrand
             // 
             txtBrand.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBrand.Location = new Point(585, 196);
             txtBrand.Margin = new Padding(75, 115, 0, 4);
             txtBrand.Name = "txtBrand";
+            txtBrand.PlaceholderText = "Honda";
             txtBrand.Size = new Size(484, 50);
             txtBrand.TabIndex = 24;
             // 
@@ -314,16 +263,6 @@
             label13.Size = new Size(37, 49);
             label13.TabIndex = 15;
             label13.Text = ":";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label6.Location = new Point(63, 742);
-            label6.Name = "label6";
-            label6.Size = new Size(131, 49);
-            label6.TabIndex = 5;
-            label6.Text = "Image";
             // 
             // label5
             // 
@@ -365,16 +304,6 @@
             label2.TabIndex = 2;
             label2.Text = "Model";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label1.Location = new Point(63, 66);
-            label1.Name = "label1";
-            label1.Size = new Size(166, 49);
-            label1.TabIndex = 1;
-            label1.Text = "Reg. No";
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(63, 81, 181);
@@ -408,6 +337,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals";
             WindowState = FormWindowState.Maximized;
+            Load += CarManagement_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -420,8 +350,6 @@
         private Button btnBack;
         private DataGridView dataGridView1;
         private GroupBox groupBox1;
-        private Label label1;
-        private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
@@ -430,16 +358,12 @@
         private Label label7;
         private Label label13;
         private TextBox txtBrand;
-        private Label label12;
         private Label label11;
         private Label label10;
         private Label label9;
-        private Label label8;
         private ComboBox chkAvailability;
         private TextBox txtRent;
         private TextBox txtModel;
-        private TextBox txtRegNo;
-        private Button btnUpImage;
         private Button btnDelete;
         private Button btnUpdate;
         private Button btnInsert;

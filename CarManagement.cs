@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Microsoft.Data.SqlClient;
 
 namespace WinFormsApp1
 {
     public partial class CarManagement : Form
     {
+        SqlConnection con;
+        SqlCommand cmd;
+        SqlDataReader dr;
+        DataSet ds;
+
         public CarManagement()
         {
             InitializeComponent();
+
+            con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=database1;Integrated Security=True;Multiple Active Result Sets=True;Encrypt=False");
+
             CenterGroupBox();
             this.Resize += (s, e) => CenterGroupBox();
         }
@@ -41,29 +42,29 @@ namespace WinFormsApp1
             panel1.Top = (this.ClientSize.Height - panel1.Height) / 11;
         }
 
-        private void btnUpImage_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                btnUpImage.Text = ofd.FileName;
-            }
-        }
-
-        //  Convert Image to byte[] to store in DB
-        public byte[] ImageToByteArray(Image img)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, img.RawFormat);
-                return ms.ToArray();
-            }
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
-
+            if (txtBrand.Text != "" || txtModel.Text !="" || txtRent.Text !="")
+            {
+                con.Open();
+                string qry = "insert into carManagement (brand,model,rentPerDay,availability) values (@brand,@model,@rentPerDay,@availability)";
+                cmd = new SqlCommand(qry, con);
+                cmd.Parameters.AddWithValue("brand", txtBrand.Text);
+                cmd.Parameters.AddWithValue("model", txtModel.Text);
+                cmd.Parameters.AddWithValue("rentPerDay", txtRent.Text);
+                cmd.Parameters.AddWithValue("availability", chkAvailability.Text);
+                int i= cmd.ExecuteNonQuery();
+                if (i==1)
+                {
+                    MessageBox.Show("Vehicle Added Successfully");
+                }
+                con.Close();
+                clearData();
+            }
+            else
+            {
+                MessageBox.Show("Vehicle Not Added");
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -78,19 +79,21 @@ namespace WinFormsApp1
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            loadData();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtRegNo.Clear();
+            clearData();
+        }
+
+        private void clearData()
+        {
             txtBrand.Clear();
             txtModel.Clear();
             txtRent.Clear();
             chkAvailability.Items.Clear();
-            btnUpImage.Text = "Upload Image";
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminDashboard fm = new AdminDashboard();
@@ -98,7 +101,21 @@ namespace WinFormsApp1
             fm.ShowDialog();
             this.Close();
         }
+
+        private void loadData()
+        {
+            con.Open();
+            string qry = "select * from carManagement";
+            cmd = new SqlCommand(qry, con);
+            dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
+        private void CarManagement_Load(object sender, EventArgs e)
+        {
+            loadData();
+        }
     }
 }
-
-// cmd.Parameters.AddWithValue("@img", imgBytes);
