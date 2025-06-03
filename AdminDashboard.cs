@@ -40,6 +40,16 @@ namespace WinFormsApp1
             con.Close();
             return count;
         }
+        private int GetCustCount()
+        {
+            int count = 0;
+            string qry = "SELECT COUNT(*) FROM rentalManagement";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            con.Open();
+            count = (int)cmd.ExecuteScalar();
+            con.Close();
+            return count;
+        }
         private int GetUserCount()
         {
             int count = 0;
@@ -60,7 +70,10 @@ namespace WinFormsApp1
 
         private void btnRentalMng_Click(object sender, EventArgs e)
         {
-
+            RentalManagenent cm = new RentalManagenent();
+            this.Hide();
+            cm.ShowDialog();
+            this.Close();
         }
 
         private void btnUserMng_Click(object sender, EventArgs e)
@@ -69,19 +82,6 @@ namespace WinFormsApp1
             this.Hide();
             cm.ShowDialog();
             this.Close();
-        }
-
-        private void btnCustomerMng_Click(object sender, EventArgs e)
-        {
-            CustomerRegistration lfm = new CustomerRegistration();
-            this.Hide();
-            lfm.ShowDialog();
-            this.Close();
-        }
-
-        private void btnTotalInccome_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -96,6 +96,7 @@ namespace WinFormsApp1
         {
             btnCarMng.Text = $"{GetCarCount()}";
             btnUserMng.Text = $"{GetUserCount()}";
+            btnRentalMng.Text= $"{GetCustCount()}";
         }
     }
 }

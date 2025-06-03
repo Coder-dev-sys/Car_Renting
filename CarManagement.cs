@@ -124,7 +124,6 @@ namespace WinFormsApp1
                 con.Open();
                 int id = Convert.ToInt32(txtId.Text);
                 string qry = "delete from carManagement where id='" + id + "'";
-                cmd.Parameters.AddWithValue("id", txtId.Text);
                 cmd = new SqlCommand(qry, con);
                 int i = cmd.ExecuteNonQuery();
                 if (i == 1)
@@ -145,6 +144,7 @@ namespace WinFormsApp1
         {
             clearData();
         }
+
         private void clearData()
         {
             txtId.Clear();
@@ -153,6 +153,7 @@ namespace WinFormsApp1
             txtRent.Clear();
             chkAvailability.SelectedIndex = -1;
         }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             AdminDashboard fm = new AdminDashboard();

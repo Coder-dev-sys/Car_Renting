@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
-            btnRefresh = new Button();
             btnClear = new Button();
             btnDelete = new Button();
             btnUpdate = new Button();
@@ -44,18 +45,17 @@
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             panel1 = new Panel();
             label7 = new Label();
+            dataGridView1 = new DataGridView();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Gainsboro;
-            groupBox1.Controls.Add(btnRefresh);
             groupBox1.Controls.Add(btnClear);
             groupBox1.Controls.Add(btnDelete);
             groupBox1.Controls.Add(btnUpdate);
@@ -77,26 +77,12 @@
             groupBox1.TabIndex = 21;
             groupBox1.TabStop = false;
             // 
-            // btnRefresh
-            // 
-            btnRefresh.BackColor = Color.FromArgb(63, 81, 181);
-            btnRefresh.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRefresh.ForeColor = Color.Beige;
-            btnRefresh.Location = new Point(213, 685);
-            btnRefresh.Margin = new Padding(3, 4, 3, 4);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(326, 130);
-            btnRefresh.TabIndex = 40;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += btnRefresh_Click;
-            // 
             // btnClear
             // 
             btnClear.BackColor = Color.FromArgb(63, 81, 181);
             btnClear.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.Beige;
-            btnClear.Location = new Point(599, 685);
+            btnClear.Location = new Point(409, 674);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(326, 130);
@@ -138,7 +124,7 @@
             btnBack.BackColor = Color.Crimson;
             btnBack.Font = new Font("Trebuchet MS", 11.1F);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(397, 856);
+            btnBack.Location = new Point(402, 856);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(345, 93);
             btnBack.TabIndex = 11;
@@ -226,9 +212,9 @@
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label4.Location = new Point(63, 197);
             label4.Name = "label4";
-            label4.Size = new Size(208, 49);
+            label4.Size = new Size(237, 49);
             label4.TabIndex = 3;
-            label4.Text = "Username";
+            label4.Text = "Username *";
             // 
             // label3
             // 
@@ -236,9 +222,9 @@
             label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label3.Location = new Point(63, 337);
             label3.Name = "label3";
-            label3.Size = new Size(192, 49);
+            label3.Size = new Size(221, 49);
             label3.TabIndex = 3;
-            label3.Text = "Password";
+            label3.Text = "Password *";
             // 
             // label1
             // 
@@ -249,16 +235,6 @@
             label1.Size = new Size(59, 49);
             label1.TabIndex = 1;
             label1.Text = "ID";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.Gainsboro;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(1173, 423);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
-            dataGridView1.Size = new Size(1123, 1006);
-            dataGridView1.TabIndex = 20;
             // 
             // panel1
             // 
@@ -281,30 +257,70 @@
             label7.TabIndex = 0;
             label7.Text = "User Management";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.Gainsboro;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.Gainsboro;
+            dataGridView1.Location = new Point(1173, 423);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1123, 1006);
+            dataGridView1.TabIndex = 40;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellMouseEnter += dataGridView1_CellMouseEnter;
+            dataGridView1.CellMouseLeave += dataGridView1_CellMouseLeave;
+            // 
             // UserManagement
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2308, 1474);
-            Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
+            Controls.Add(groupBox1);
             Controls.Add(panel1);
             Name = "UserManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals";
             WindowState = FormWindowState.Maximized;
+            Load += UserManagement_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private Button btnRefresh;
         private Button btnClear;
         private Button btnDelete;
         private Button btnUpdate;
@@ -322,8 +338,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DataGridView dataGridView1;
         private Panel panel1;
         private Label label7;
+        private DataGridView dataGridView1;
     }
 }

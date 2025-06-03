@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label5 = new Label();
             btnLogout = new Button();
-            btnTotalInccome = new Button();
-            label4 = new Label();
-            btnCustomerMng = new Button();
             label3 = new Label();
             btnUserMng = new Button();
             label2 = new Label();
@@ -49,11 +45,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Gainsboro;
-            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(btnLogout);
-            groupBox1.Controls.Add(btnTotalInccome);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(btnCustomerMng);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(btnUserMng);
             groupBox1.Controls.Add(label2);
@@ -67,16 +59,6 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label5.Location = new Point(1288, 360);
-            label5.Name = "label5";
-            label5.Size = new Size(260, 49);
-            label5.TabIndex = 9;
-            label5.Text = "Total Income";
-            // 
             // btnLogout
             // 
             btnLogout.BackColor = Color.Crimson;
@@ -89,42 +71,6 @@
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
-            // 
-            // btnTotalInccome
-            // 
-            btnTotalInccome.BackColor = Color.DarkViolet;
-            btnTotalInccome.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            btnTotalInccome.ForeColor = SystemColors.Control;
-            btnTotalInccome.Location = new Point(1235, 431);
-            btnTotalInccome.Name = "btnTotalInccome";
-            btnTotalInccome.Size = new Size(373, 141);
-            btnTotalInccome.TabIndex = 8;
-            btnTotalInccome.Text = "0";
-            btnTotalInccome.UseVisualStyleBackColor = false;
-            btnTotalInccome.Click += btnTotalInccome_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label4.Location = new Point(432, 360);
-            label4.Name = "label4";
-            label4.Size = new Size(436, 49);
-            label4.TabIndex = 7;
-            label4.Text = "Customer Registration";
-            // 
-            // btnCustomerMng
-            // 
-            btnCustomerMng.BackColor = Color.Blue;
-            btnCustomerMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            btnCustomerMng.ForeColor = SystemColors.Control;
-            btnCustomerMng.Location = new Point(459, 431);
-            btnCustomerMng.Name = "btnCustomerMng";
-            btnCustomerMng.Size = new Size(373, 141);
-            btnCustomerMng.TabIndex = 6;
-            btnCustomerMng.Text = "0";
-            btnCustomerMng.UseVisualStyleBackColor = false;
-            btnCustomerMng.Click += btnCustomerMng_Click;
             // 
             // label3
             // 
@@ -240,10 +186,6 @@
         private Button btnUserMng;
         private Label label2;
         private Button btnRentalMng;
-        private Label label5;
-        private Button btnTotalInccome;
-        private Label label4;
-        private Button btnCustomerMng;
         private Button btnLogout;
         private Panel panel1;
         private Label label6;

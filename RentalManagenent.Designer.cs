@@ -28,26 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label7 = new Label();
             groupBox1 = new GroupBox();
-            btnRefresh = new Button();
+            toCarDate = new DateTimePicker();
+            fromCarDate = new DateTimePicker();
+            label3 = new Label();
+            label6 = new Label();
+            label14 = new Label();
             btnDelete = new Button();
             btnBack = new Button();
             btnInsert = new Button();
-            chkAvailability = new ComboBox();
             txtRent = new TextBox();
             txtModel = new TextBox();
-            txtRegNo = new TextBox();
+            txtId = new TextBox();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            txtBrand = new TextBox();
+            txtUsername = new TextBox();
             label13 = new Label();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
@@ -80,44 +84,84 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Gainsboro;
-            groupBox1.Controls.Add(btnRefresh);
+            groupBox1.Controls.Add(toCarDate);
+            groupBox1.Controls.Add(fromCarDate);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label14);
             groupBox1.Controls.Add(btnDelete);
             groupBox1.Controls.Add(btnBack);
             groupBox1.Controls.Add(btnInsert);
-            groupBox1.Controls.Add(chkAvailability);
             groupBox1.Controls.Add(txtRent);
             groupBox1.Controls.Add(txtModel);
-            groupBox1.Controls.Add(txtRegNo);
+            groupBox1.Controls.Add(txtId);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(txtBrand);
+            groupBox1.Controls.Add(txtUsername);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 404);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1123, 1388);
+            groupBox1.Size = new Size(1123, 1131);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             // 
-            // btnRefresh
+            // toCarDate
             // 
-            btnRefresh.BackColor = Color.FromArgb(63, 81, 181);
-            btnRefresh.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRefresh.ForeColor = Color.Beige;
-            btnRefresh.Location = new Point(403, 943);
-            btnRefresh.Margin = new Padding(3, 4, 3, 4);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(326, 130);
-            btnRefresh.TabIndex = 40;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = false;
+            toCarDate.Font = new Font("Trebuchet MS", 11.1F);
+            toCarDate.Format = DateTimePickerFormat.Short;
+            toCarDate.Location = new Point(585, 604);
+            toCarDate.Name = "toCarDate";
+            toCarDate.Size = new Size(484, 50);
+            toCarDate.TabIndex = 54;
+            // 
+            // fromCarDate
+            // 
+            fromCarDate.Font = new Font("Trebuchet MS", 11.1F);
+            fromCarDate.Format = DateTimePickerFormat.Short;
+            fromCarDate.Location = new Point(585, 467);
+            fromCarDate.MinDate = new DateTime(2025, 6, 3, 0, 0, 0, 0);
+            fromCarDate.Name = "fromCarDate";
+            fromCarDate.Size = new Size(484, 50);
+            fromCarDate.TabIndex = 53;
+            fromCarDate.Value = new DateTime(2025, 6, 3, 16, 46, 52, 0);
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlText;
+            label3.Location = new Point(470, 604);
+            label3.Name = "label3";
+            label3.Size = new Size(37, 49);
+            label3.TabIndex = 51;
+            label3.Text = ":";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            label6.Location = new Point(63, 467);
+            label6.Name = "label6";
+            label6.Size = new Size(217, 49);
+            label6.TabIndex = 50;
+            label6.Text = "From Date";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            label14.Location = new Point(63, 604);
+            label14.Name = "label14";
+            label14.Size = new Size(193, 49);
+            label14.TabIndex = 49;
+            label14.Text = "Due Date";
             // 
             // btnDelete
             // 
@@ -131,18 +175,20 @@
             btnDelete.TabIndex = 38;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnBack
             // 
             btnBack.BackColor = Color.Crimson;
             btnBack.Font = new Font("Trebuchet MS", 11.1F);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(397, 1129);
+            btnBack.Location = new Point(394, 980);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(345, 93);
             btnBack.TabIndex = 11;
             btnBack.Text = "Back To Dashboard";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // btnInsert
             // 
@@ -156,22 +202,12 @@
             btnInsert.TabIndex = 36;
             btnInsert.Text = "Insert";
             btnInsert.UseVisualStyleBackColor = false;
-            // 
-            // chkAvailability
-            // 
-            chkAvailability.DropDownStyle = ComboBoxStyle.DropDownList;
-            chkAvailability.Font = new Font("Trebuchet MS", 11.1F);
-            chkAvailability.FormattingEnabled = true;
-            chkAvailability.Items.AddRange(new object[] { "Available", "Not-Available" });
-            chkAvailability.Location = new Point(585, 606);
-            chkAvailability.Name = "chkAvailability";
-            chkAvailability.Size = new Size(484, 54);
-            chkAvailability.TabIndex = 33;
+            btnInsert.Click += btnInsert_Click;
             // 
             // txtRent
             // 
             txtRent.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRent.Location = new Point(585, 467);
+            txtRent.Location = new Point(585, 753);
             txtRent.Margin = new Padding(75, 115, 0, 4);
             txtRent.Name = "txtRent";
             txtRent.Size = new Size(484, 50);
@@ -186,21 +222,21 @@
             txtModel.Size = new Size(484, 50);
             txtModel.TabIndex = 31;
             // 
-            // txtRegNo
+            // txtId
             // 
-            txtRegNo.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRegNo.Location = new Point(585, 65);
-            txtRegNo.Margin = new Padding(75, 115, 0, 4);
-            txtRegNo.Name = "txtRegNo";
-            txtRegNo.Size = new Size(484, 50);
-            txtRegNo.TabIndex = 30;
+            txtId.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(585, 65);
+            txtId.Margin = new Padding(75, 115, 0, 4);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(484, 50);
+            txtId.TabIndex = 30;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ControlText;
-            label11.Location = new Point(470, 611);
+            label11.Location = new Point(470, 753);
             label11.Name = "label11";
             label11.Size = new Size(37, 49);
             label11.TabIndex = 28;
@@ -239,14 +275,14 @@
             label8.TabIndex = 25;
             label8.Text = ":";
             // 
-            // txtBrand
+            // txtUsername
             // 
-            txtBrand.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBrand.Location = new Point(585, 196);
-            txtBrand.Margin = new Padding(75, 115, 0, 4);
-            txtBrand.Name = "txtBrand";
-            txtBrand.Size = new Size(484, 50);
-            txtBrand.TabIndex = 24;
+            txtUsername.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsername.Location = new Point(585, 196);
+            txtUsername.Margin = new Padding(75, 115, 0, 4);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(484, 50);
+            txtUsername.TabIndex = 24;
             // 
             // label13
             // 
@@ -263,11 +299,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label5.Location = new Point(63, 611);
+            label5.Location = new Point(63, 753);
             label5.Name = "label5";
-            label5.Size = new Size(229, 49);
+            label5.Size = new Size(181, 49);
             label5.TabIndex = 4;
-            label5.Text = "Availability";
+            label5.Text = "Rent Bill";
             // 
             // label4
             // 
@@ -275,19 +311,9 @@
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label4.Location = new Point(63, 197);
             label4.Name = "label4";
-            label4.Size = new Size(317, 49);
+            label4.Size = new Size(208, 49);
             label4.TabIndex = 3;
-            label4.Text = "Customer Name";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label3.Location = new Point(63, 467);
-            label3.Name = "label3";
-            label3.Size = new Size(262, 49);
-            label3.TabIndex = 3;
-            label3.Text = "Rent Per Day";
+            label4.Text = "Username";
             // 
             // label2
             // 
@@ -305,32 +331,61 @@
             label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label1.Location = new Point(63, 66);
             label1.Name = "label1";
-            label1.Size = new Size(133, 49);
+            label1.Size = new Size(59, 49);
             label1.TabIndex = 1;
-            label1.Text = "Car ID";
+            label1.Text = "ID";
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.Gainsboro;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(1173, 404);
+            dataGridView1.GridColor = Color.Gainsboro;
+            dataGridView1.Location = new Point(1164, 404);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 102;
-            dataGridView1.Size = new Size(1123, 1388);
-            dataGridView1.TabIndex = 16;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(1123, 1131);
+            dataGridView1.TabIndex = 41;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // RentalManagenent
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2308, 1776);
+            Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(groupBox1);
-            Controls.Add(dataGridView1);
             Name = "RentalManagenent";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals";
             WindowState = FormWindowState.Maximized;
+            Load += RentalManagenent_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -344,25 +399,27 @@
         private Panel panel1;
         private Label label7;
         private GroupBox groupBox1;
-        private Button btnRefresh;
         private Button btnDelete;
         private Button btnBack;
         private Button btnInsert;
-        private ComboBox chkAvailability;
         private TextBox txtRent;
         private TextBox txtModel;
-        private TextBox txtRegNo;
+        private TextBox txtId;
         private Label label11;
         private Label label10;
         private Label label9;
         private Label label8;
-        private TextBox txtBrand;
+        private TextBox txtUsername;
         private Label label13;
         private Label label5;
         private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
+        private DateTimePicker toCarDate;
+        private DateTimePicker fromCarDate;
+        private Label label3;
+        private Label label6;
+        private Label label14;
         private DataGridView dataGridView1;
     }
 }
