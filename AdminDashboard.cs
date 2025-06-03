@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 using WindowsFormsApp1;
 
 namespace WinFormsApp1
 {
     public partial class AdminDashboard : Form
     {
+        SqlConnection con;
+        SqlCommand cmd;
         public AdminDashboard()
         {
             InitializeComponent();
+            con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=database1;Integrated Security=True;Multiple Active Result Sets=True;Encrypt=False");
+
             CenterGroupBox();
             this.Resize += (s, e) => CenterGroupBox();
         }
@@ -30,6 +29,17 @@ namespace WinFormsApp1
             panel1.Top = (this.ClientSize.Height - panel1.Height) / 5;
         }
 
+        // Row Counter UDF
+        private int GetCarCount()
+        {
+            int count = 0;
+            string qry = "SELECT COUNT(*) FROM carManagement";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            con.Open();
+            count = (int)cmd.ExecuteScalar();
+            con.Close();
+            return count;
+        }
         private void btnCarMng_Click(object sender, EventArgs e)
         {
             CarManagement cm = new CarManagement();
@@ -70,6 +80,11 @@ namespace WinFormsApp1
             this.Hide();
             lfm.ShowDialog();
             this.Close();
+        }
+
+        private void AdminDashboard_Load(object sender, EventArgs e)
+        {
+            btnCarMng.Text = $"{GetCarCount()}";
         }
     }
 }

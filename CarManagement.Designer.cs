@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnBack = new Button();
             dataGridView1 = new DataGridView();
             groupBox1 = new GroupBox();
-            btnRefresh = new Button();
+            txtId = new TextBox();
+            label6 = new Label();
+            label1 = new Label();
             btnClear = new Button();
             btnDelete = new Button();
             btnUpdate = new Button();
@@ -60,7 +65,7 @@
             btnBack.BackColor = Color.Crimson;
             btnBack.Font = new Font("Trebuchet MS", 11.1F);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(394, 1271);
+            btnBack.Location = new Point(402, 1267);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(345, 93);
             btnBack.TabIndex = 11;
@@ -70,21 +75,58 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.Gainsboro;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.GridColor = Color.Gainsboro;
             dataGridView1.Location = new Point(1173, 523);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(63, 81, 181);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1123, 1388);
             dataGridView1.TabIndex = 13;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellMouseEnter += dataGridView1_CellMouseEnter;
+            dataGridView1.CellMouseLeave += dataGridView1_CellMouseLeave;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Gainsboro;
-            groupBox1.Controls.Add(btnRefresh);
+            groupBox1.Controls.Add(txtId);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnClear);
             groupBox1.Controls.Add(btnDelete);
             groupBox1.Controls.Add(btnUpdate);
@@ -109,26 +151,43 @@
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             // 
-            // btnRefresh
+            // txtId
             // 
-            btnRefresh.BackColor = Color.FromArgb(63, 81, 181);
-            btnRefresh.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRefresh.ForeColor = Color.Beige;
-            btnRefresh.Location = new Point(213, 1108);
-            btnRefresh.Margin = new Padding(3, 4, 3, 4);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(326, 130);
-            btnRefresh.TabIndex = 40;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += btnRefresh_Click;
+            txtId.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtId.Location = new Point(585, 80);
+            txtId.Margin = new Padding(75, 115, 0, 4);
+            txtId.Name = "txtId";
+            txtId.PlaceholderText = "1";
+            txtId.Size = new Size(484, 50);
+            txtId.TabIndex = 42;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.ControlText;
+            label6.Location = new Point(470, 81);
+            label6.Name = "label6";
+            label6.Size = new Size(37, 49);
+            label6.TabIndex = 41;
+            label6.Text = ":";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            label1.Location = new Point(63, 81);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 49);
+            label1.TabIndex = 40;
+            label1.Text = "Id";
             // 
             // btnClear
             // 
             btnClear.BackColor = Color.FromArgb(63, 81, 181);
             btnClear.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.Beige;
-            btnClear.Location = new Point(597, 1108);
+            btnClear.Location = new Point(409, 1105);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(326, 130);
@@ -270,9 +329,9 @@
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label5.Location = new Point(63, 611);
             label5.Name = "label5";
-            label5.Size = new Size(229, 49);
+            label5.Size = new Size(258, 49);
             label5.TabIndex = 4;
-            label5.Text = "Availability";
+            label5.Text = "Availability *";
             // 
             // label4
             // 
@@ -280,9 +339,9 @@
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label4.Location = new Point(63, 197);
             label4.Name = "label4";
-            label4.Size = new Size(130, 49);
+            label4.Size = new Size(159, 49);
             label4.TabIndex = 3;
-            label4.Text = "Brand";
+            label4.Text = "Brand *";
             // 
             // label3
             // 
@@ -290,9 +349,9 @@
             label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label3.Location = new Point(63, 467);
             label3.Name = "label3";
-            label3.Size = new Size(262, 49);
+            label3.Size = new Size(291, 49);
             label3.TabIndex = 3;
-            label3.Text = "Rent Per Day";
+            label3.Text = "Rent Per Day *";
             // 
             // label2
             // 
@@ -300,9 +359,9 @@
             label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label2.Location = new Point(63, 325);
             label2.Name = "label2";
-            label2.Size = new Size(133, 49);
+            label2.Size = new Size(162, 49);
             label2.TabIndex = 2;
-            label2.Text = "Model";
+            label2.Text = "Model *";
             // 
             // panel1
             // 
@@ -368,6 +427,8 @@
         private Button btnUpdate;
         private Button btnInsert;
         private Button btnClear;
-        private Button btnRefresh;
+        private TextBox txtId;
+        private Label label6;
+        private Label label1;
     }
 }

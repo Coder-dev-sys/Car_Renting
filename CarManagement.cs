@@ -10,12 +10,9 @@ namespace WinFormsApp1
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader dr;
-        DataSet ds;
-
         public CarManagement()
         {
             InitializeComponent();
-
             con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=database1;Integrated Security=True;Multiple Active Result Sets=True;Encrypt=False");
 
             CenterGroupBox();
@@ -44,7 +41,7 @@ namespace WinFormsApp1
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtBrand.Text != "" || txtModel.Text !="" || txtRent.Text !="")
+            if (txtBrand.Text != "" || txtModel.Text != "" || txtRent.Text != "" || chkAvailability.Text != "")
             {
                 con.Open();
                 string qry = "insert into carManagement (brand,model,rentPerDay,availability) values (@brand,@model,@rentPerDay,@availability)";
@@ -53,33 +50,80 @@ namespace WinFormsApp1
                 cmd.Parameters.AddWithValue("model", txtModel.Text);
                 cmd.Parameters.AddWithValue("rentPerDay", txtRent.Text);
                 cmd.Parameters.AddWithValue("availability", chkAvailability.Text);
-                int i= cmd.ExecuteNonQuery();
-                if (i==1)
+                int i = cmd.ExecuteNonQuery();
+                if (i == 1)
                 {
-                    MessageBox.Show("Vehicle Added Successfully");
+                    MessageBox.Show("Vehicle Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 con.Close();
                 clearData();
+                loadData();
             }
             else
             {
-                MessageBox.Show("Vehicle Not Added");
+                MessageBox.Show("Vehicle Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtBrand.Text != "" || txtModel.Text != "" || txtRent.Text != "" || chkAvailability.Text != "")
+            {
+                con.Open();
+                cmd = new SqlCommand(("update carManagement set brand=@brand, model=@model, rentPerDay=@rentPerDay, availability=@availability where id=@id"), con);
+                cmd.Parameters.AddWithValue("id", txtId.Text);
+                cmd.Parameters.AddWithValue("brand", txtBrand.Text);
+                cmd.Parameters.AddWithValue("model", txtModel.Text);
+                cmd.Parameters.AddWithValue("rentPerDay", txtRent.Text);
+                cmd.Parameters.AddWithValue("availability", chkAvailability.Text);
+                int i = cmd.ExecuteNonQuery();
+                if (i == 1)
+                {
+                    MessageBox.Show("Vehicle Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+                clearData();
+                loadData();
+            }
+            else
+            {
+                MessageBox.Show("Vehicle Not Updated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            DataGridViewRow dgr = dataGridView1.Rows[index];
+            txtId.Text = dgr.Cells[0].Value.ToString();
+            txtBrand.Text = dgr.Cells[1].Value.ToString();
+            txtModel.Text = dgr.Cells[2].Value.ToString();
+            txtRent.Text = dgr.Cells[3].Value.ToString();
+            chkAvailability.Text = dgr.Cells[4].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            loadData();
+            if (txtId.Text != "" || txtBrand.Text != "" || txtModel.Text != "" || txtRent.Text != "" || chkAvailability.Text != "")
+            {
+                con.Open();
+                int id = Convert.ToInt32(txtId.Text);
+                string qry = "delete from carManagement where id='" + id + "'";
+                cmd.Parameters.AddWithValue("id", txtId.Text);
+                cmd = new SqlCommand(qry, con);
+                int i = cmd.ExecuteNonQuery();
+                if (i == 1)
+                {
+                    MessageBox.Show("Vehicle Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                con.Close();
+                clearData();
+                loadData();
+            }
+            else
+            {
+                MessageBox.Show("Vehicle Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -89,10 +133,11 @@ namespace WinFormsApp1
 
         private void clearData()
         {
+            txtId.Clear();
             txtBrand.Clear();
             txtModel.Clear();
             txtRent.Clear();
-            chkAvailability.Items.Clear();
+            chkAvailability.SelectedIndex = -1;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -105,17 +150,44 @@ namespace WinFormsApp1
         private void loadData()
         {
             con.Open();
+            
+            // Loading Data
             string qry = "select * from carManagement";
             cmd = new SqlCommand(qry, con);
             dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
             dataGridView1.DataSource = dt;
+
+            // Renaming Column Names
+            dataGridView1.Columns["brand"].HeaderText = "Car Brand";
+            dataGridView1.Columns["model"].HeaderText = "Car Model";
+            dataGridView1.Columns["rentPerDay"].HeaderText = "Rent / Day";
+            dataGridView1.Columns["availability"].HeaderText = "Status";
+
             con.Close();
         }
         private void CarManagement_Load(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void dataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int hoveredRowIndex = -1;
+            if (e.RowIndex >= 0 && e.RowIndex != hoveredRowIndex)
+            {
+                hoveredRowIndex = e.RowIndex;
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.SkyBlue;
+            }
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+            }
         }
     }
 }

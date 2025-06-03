@@ -93,7 +93,7 @@
             // btnTotalInccome
             // 
             btnTotalInccome.BackColor = Color.DarkViolet;
-            btnTotalInccome.Font = new Font("Trebuchet MS", 11.1F);
+            btnTotalInccome.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             btnTotalInccome.ForeColor = SystemColors.Control;
             btnTotalInccome.Location = new Point(1235, 431);
             btnTotalInccome.Name = "btnTotalInccome";
@@ -116,7 +116,7 @@
             // btnCustomerMng
             // 
             btnCustomerMng.BackColor = Color.Blue;
-            btnCustomerMng.Font = new Font("Trebuchet MS", 11.1F);
+            btnCustomerMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             btnCustomerMng.ForeColor = SystemColors.Control;
             btnCustomerMng.Location = new Point(459, 431);
             btnCustomerMng.Name = "btnCustomerMng";
@@ -139,7 +139,7 @@
             // btnUserMng
             // 
             btnUserMng.BackColor = Color.MediumTurquoise;
-            btnUserMng.Font = new Font("Trebuchet MS", 11.1F);
+            btnUserMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             btnUserMng.Location = new Point(1581, 127);
             btnUserMng.Name = "btnUserMng";
             btnUserMng.Size = new Size(373, 141);
@@ -161,7 +161,7 @@
             // btnRentalMng
             // 
             btnRentalMng.BackColor = Color.YellowGreen;
-            btnRentalMng.Font = new Font("Trebuchet MS", 11.1F);
+            btnRentalMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             btnRentalMng.Location = new Point(841, 127);
             btnRentalMng.Name = "btnRentalMng";
             btnRentalMng.Size = new Size(373, 141);
@@ -183,7 +183,7 @@
             // btnCarMng
             // 
             btnCarMng.BackColor = Color.DarkOrange;
-            btnCarMng.Font = new Font("Trebuchet MS", 11.1F);
+            btnCarMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             btnCarMng.Location = new Point(75, 127);
             btnCarMng.Name = "btnCarMng";
             btnCarMng.Size = new Size(373, 141);
@@ -224,6 +224,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals";
             WindowState = FormWindowState.Maximized;
+            Load += AdminDashboard_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
