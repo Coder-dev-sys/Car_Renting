@@ -40,6 +40,16 @@ namespace WinFormsApp1
             con.Close();
             return count;
         }
+        private int GetUserCount()
+        {
+            int count = 0;
+            string qry = "SELECT COUNT(*) FROM userManagement";
+            SqlCommand cmd = new SqlCommand(qry, con);
+            con.Open();
+            count = (int)cmd.ExecuteScalar();
+            con.Close();
+            return count;
+        }
         private void btnCarMng_Click(object sender, EventArgs e)
         {
             CarManagement cm = new CarManagement();
@@ -85,6 +95,7 @@ namespace WinFormsApp1
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             btnCarMng.Text = $"{GetCarCount()}";
+            btnUserMng.Text = $"{GetUserCount()}";
         }
     }
 }

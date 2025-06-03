@@ -41,9 +41,24 @@ namespace WinFormsApp1
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtBrand.Text != "" || txtModel.Text != "" || txtRent.Text != "" || chkAvailability.Text != "")
+            if (txtBrand.Text != "" && txtModel.Text != "" && txtRent.Text != "" && chkAvailability.Text != "")
             {
                 con.Open();
+
+                // Duplication Check
+                string checkQuery = "SELECT COUNT(*) FROM carManagement WHERE brand = @brand and model = @model";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+                checkCmd.Parameters.AddWithValue("@brand", txtBrand.Text);
+                checkCmd.Parameters.AddWithValue("@model", txtModel.Text);
+                int exists = (int)checkCmd.ExecuteScalar();
+                if (exists > 0)
+                {
+                    MessageBox.Show("Brand And Model already registered!", "Duplicate Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    con.Close();
+                    return;
+                }
+
+                // Data Insertion 
                 string qry = "insert into carManagement (brand,model,rentPerDay,availability) values (@brand,@model,@rentPerDay,@availability)";
                 cmd = new SqlCommand(qry, con);
                 cmd.Parameters.AddWithValue("brand", txtBrand.Text);
@@ -67,7 +82,7 @@ namespace WinFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtBrand.Text != "" || txtModel.Text != "" || txtRent.Text != "" || chkAvailability.Text != "")
+            if (txtBrand.Text != "" && txtModel.Text != "" && txtRent.Text != "" && chkAvailability.Text != "")
             {
                 con.Open();
                 cmd = new SqlCommand(("update carManagement set brand=@brand, model=@model, rentPerDay=@rentPerDay, availability=@availability where id=@id"), con);
@@ -104,7 +119,7 @@ namespace WinFormsApp1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtId.Text != "" || txtBrand.Text != "" || txtModel.Text != "" || txtRent.Text != "" || chkAvailability.Text != "")
+            if (txtId.Text != "" && txtBrand.Text != "" && txtModel.Text != "" && txtRent.Text != "" && chkAvailability.Text != "")
             {
                 con.Open();
                 int id = Convert.ToInt32(txtId.Text);
@@ -130,7 +145,6 @@ namespace WinFormsApp1
         {
             clearData();
         }
-
         private void clearData()
         {
             txtId.Clear();
