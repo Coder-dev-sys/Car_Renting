@@ -13,7 +13,7 @@ namespace WinFormsApp1
         public UserManagement()
         {
             InitializeComponent();
-            con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=database1;Integrated Security=True;Multiple Active Result Sets=True;Encrypt=False");
+            con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db1.mdf;Integrated Security=True;");
 
             CenterGroupBox();
             this.Resize += (s, e) => CenterGroupBox();

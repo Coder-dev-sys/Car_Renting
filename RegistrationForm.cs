@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WindowsFormsApp1
 {
@@ -12,7 +14,7 @@ namespace WindowsFormsApp1
         public RegistrationForm()
         {
             InitializeComponent();
-            con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=database1;Integrated Security=True;Multiple Active Result Sets=True;Encrypt=False");
+            con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db1.mdf;Integrated Security=True;");
 
             CenterGroupBox();
             this.Resize += (s, e) => CenterGroupBox();
