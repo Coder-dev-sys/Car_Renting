@@ -68,13 +68,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("User Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("User Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("User Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Details", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -93,13 +97,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("User Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("User Not Updated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("User Not Updated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Details", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -116,13 +124,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("User Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("User Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("User Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Details", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -196,8 +208,8 @@ namespace WinFormsApp1
             int index = e.RowIndex;
             DataGridViewRow dgr = dataGridView1.Rows[index];
             txtCustId.Text = dgr.Cells[0].Value.ToString();
-            txtUsername.Text = dgr.Cells[1].Value.ToString();
-            txtPassword.Text = dgr.Cells[2].Value.ToString();
+            txtUsername.Text = dgr.Cells[4].Value.ToString();
+            txtPassword.Text = dgr.Cells[5].Value.ToString();
         }
     }
 }

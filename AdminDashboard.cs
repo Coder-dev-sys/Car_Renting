@@ -29,7 +29,7 @@ namespace WinFormsApp1
             panel1.Top = (this.ClientSize.Height - panel1.Height) / 5;
         }
 
-        // Row Counter UDF
+        // Row Counter UDFs
         private int GetCarCount()
         {
             int count = 0;

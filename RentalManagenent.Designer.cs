@@ -48,7 +48,7 @@
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            txtUsername = new TextBox();
+            txtCustname = new TextBox();
             label13 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -99,7 +99,7 @@
             groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(txtUsername);
+            groupBox1.Controls.Add(txtCustname);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -108,7 +108,7 @@
             groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 404);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1123, 1131);
+            groupBox1.Size = new Size(1123, 1149);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             // 
@@ -149,9 +149,9 @@
             label6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label6.Location = new Point(63, 467);
             label6.Name = "label6";
-            label6.Size = new Size(217, 49);
+            label6.Size = new Size(246, 49);
             label6.TabIndex = 50;
-            label6.Text = "From Date";
+            label6.Text = "From Date *";
             // 
             // label14
             // 
@@ -159,16 +159,16 @@
             label14.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label14.Location = new Point(63, 604);
             label14.Name = "label14";
-            label14.Size = new Size(193, 49);
+            label14.Size = new Size(222, 49);
             label14.TabIndex = 49;
-            label14.Text = "Due Date";
+            label14.Text = "Due Date *";
             // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.FromArgb(63, 81, 181);
             btnDelete.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDelete.ForeColor = Color.Beige;
-            btnDelete.Location = new Point(772, 943);
+            btnDelete.Location = new Point(779, 981);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(326, 130);
@@ -182,11 +182,11 @@
             btnBack.BackColor = Color.Crimson;
             btnBack.Font = new Font("Trebuchet MS", 11.1F);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(394, 980);
+            btnBack.Location = new Point(392, 1018);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(345, 93);
             btnBack.TabIndex = 11;
-            btnBack.Text = "Back To Dashboard";
+            btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
@@ -195,7 +195,7 @@
             btnInsert.BackColor = Color.FromArgb(63, 81, 181);
             btnInsert.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInsert.ForeColor = Color.Beige;
-            btnInsert.Location = new Point(15, 943);
+            btnInsert.Location = new Point(15, 981);
             btnInsert.Margin = new Padding(3, 4, 3, 4);
             btnInsert.Name = "btnInsert";
             btnInsert.Size = new Size(326, 130);
@@ -275,14 +275,14 @@
             label8.TabIndex = 25;
             label8.Text = ":";
             // 
-            // txtUsername
+            // txtCustname
             // 
-            txtUsername.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsername.Location = new Point(585, 196);
-            txtUsername.Margin = new Padding(75, 115, 0, 4);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(484, 50);
-            txtUsername.TabIndex = 24;
+            txtCustname.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCustname.Location = new Point(585, 196);
+            txtCustname.Margin = new Padding(75, 115, 0, 4);
+            txtCustname.Name = "txtCustname";
+            txtCustname.Size = new Size(484, 50);
+            txtCustname.TabIndex = 24;
             // 
             // label13
             // 
@@ -301,9 +301,9 @@
             label5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label5.Location = new Point(63, 753);
             label5.Name = "label5";
-            label5.Size = new Size(181, 49);
+            label5.Size = new Size(210, 49);
             label5.TabIndex = 4;
-            label5.Text = "Rent Bill";
+            label5.Text = "Rent Bill *";
             // 
             // label4
             // 
@@ -311,9 +311,9 @@
             label4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label4.Location = new Point(63, 197);
             label4.Name = "label4";
-            label4.Size = new Size(208, 49);
+            label4.Size = new Size(346, 49);
             label4.TabIndex = 3;
-            label4.Text = "Username";
+            label4.Text = "Customer Name *";
             // 
             // label2
             // 
@@ -321,9 +321,9 @@
             label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
             label2.Location = new Point(63, 325);
             label2.Name = "label2";
-            label2.Size = new Size(133, 49);
+            label2.Size = new Size(162, 49);
             label2.TabIndex = 2;
-            label2.Text = "Model";
+            label2.Text = "Model *";
             // 
             // label1
             // 
@@ -369,7 +369,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1123, 1131);
+            dataGridView1.Size = new Size(1123, 1149);
             dataGridView1.TabIndex = 41;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -409,7 +409,7 @@
         private Label label10;
         private Label label9;
         private Label label8;
-        private TextBox txtUsername;
+        private TextBox txtCustname;
         private Label label13;
         private Label label5;
         private Label label4;

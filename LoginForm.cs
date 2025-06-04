@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Enter Both Input Box !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Enter Both Input Box !", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

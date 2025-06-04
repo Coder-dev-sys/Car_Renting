@@ -64,9 +64,9 @@
             btnLogout.BackColor = Color.Crimson;
             btnLogout.Font = new Font("Trebuchet MS", 11.1F);
             btnLogout.ForeColor = SystemColors.Control;
-            btnLogout.Location = new Point(1735, 654);
+            btnLogout.Location = new Point(1581, 566);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(279, 93);
+            btnLogout.Size = new Size(373, 141);
             btnLogout.TabIndex = 10;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label3.Location = new Point(1590, 56);
+            label3.Location = new Point(1590, 219);
             label3.Name = "label3";
             label3.Size = new Size(354, 49);
             label3.TabIndex = 5;
@@ -86,7 +86,7 @@
             // 
             btnUserMng.BackColor = Color.MediumTurquoise;
             btnUserMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            btnUserMng.Location = new Point(1581, 127);
+            btnUserMng.Location = new Point(1581, 290);
             btnUserMng.Name = "btnUserMng";
             btnUserMng.Size = new Size(373, 141);
             btnUserMng.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label2.Location = new Point(841, 56);
+            label2.Location = new Point(841, 219);
             label2.Name = "label2";
             label2.Size = new Size(390, 49);
             label2.TabIndex = 3;
@@ -108,7 +108,7 @@
             // 
             btnRentalMng.BackColor = Color.YellowGreen;
             btnRentalMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            btnRentalMng.Location = new Point(841, 127);
+            btnRentalMng.Location = new Point(841, 290);
             btnRentalMng.Name = "btnRentalMng";
             btnRentalMng.Size = new Size(373, 141);
             btnRentalMng.TabIndex = 2;
@@ -120,7 +120,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            label1.Location = new Point(95, 56);
+            label1.Location = new Point(105, 219);
             label1.Name = "label1";
             label1.Size = new Size(332, 49);
             label1.TabIndex = 1;
@@ -130,7 +130,7 @@
             // 
             btnCarMng.BackColor = Color.DarkOrange;
             btnCarMng.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            btnCarMng.Location = new Point(75, 127);
+            btnCarMng.Location = new Point(85, 290);
             btnCarMng.Name = "btnCarMng";
             btnCarMng.Size = new Size(373, 141);
             btnCarMng.TabIndex = 0;
@@ -153,11 +153,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold);
             label6.ForeColor = Color.Beige;
-            label6.Location = new Point(816, 87);
+            label6.Location = new Point(740, 91);
             label6.Name = "label6";
-            label6.Size = new Size(367, 89);
+            label6.Size = new Size(586, 89);
             label6.TabIndex = 0;
-            label6.Text = "Dashboard";
+            label6.Text = "Admin Dashboard";
             // 
             // AdminDashboard
             // 

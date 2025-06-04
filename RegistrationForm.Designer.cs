@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnBack = new Button();
             txtFullName = new TextBox();
             txtPwd = new TextBox();
             txtUsername = new TextBox();
@@ -48,7 +49,6 @@
             label1 = new Label();
             panel2 = new Panel();
             label8 = new Label();
-            btnBack = new Button();
             groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -79,9 +79,23 @@
             groupBox1.Location = new Point(450, 373);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(1225, 1199);
+            groupBox1.Size = new Size(1225, 1269);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(63, 81, 181);
+            btnBack.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.Beige;
+            btnBack.Location = new Point(845, 1056);
+            btnBack.Margin = new Padding(3, 4, 3, 4);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(326, 130);
+            btnBack.TabIndex = 24;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // txtFullName
             // 
@@ -201,7 +215,7 @@
             btnReset.BackColor = Color.FromArgb(63, 81, 181);
             btnReset.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.Beige;
-            btnReset.Location = new Point(459, 1008);
+            btnReset.Location = new Point(453, 1056);
             btnReset.Margin = new Padding(3, 4, 3, 4);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(326, 130);
@@ -215,7 +229,7 @@
             btnRegister.BackColor = Color.FromArgb(63, 81, 181);
             btnRegister.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegister.ForeColor = Color.Beige;
-            btnRegister.Location = new Point(55, 1008);
+            btnRegister.Location = new Point(55, 1056);
             btnRegister.Margin = new Padding(3, 4, 3, 4);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(326, 130);
@@ -289,20 +303,6 @@
             label8.TabIndex = 0;
             label8.Text = "Car Renting System";
             // 
-            // btnBack
-            // 
-            btnBack.BackColor = Color.FromArgb(63, 81, 181);
-            btnBack.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBack.ForeColor = Color.Beige;
-            btnBack.Location = new Point(845, 1008);
-            btnBack.Margin = new Padding(3, 4, 3, 4);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(326, 130);
-            btnBack.TabIndex = 24;
-            btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += btnBack_Click;
-            // 
             // RegistrationForm
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
@@ -315,6 +315,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Car Rentals - Registration";
             WindowState = FormWindowState.Maximized;
+            Load += RegistrationForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel2.ResumeLayout(false);

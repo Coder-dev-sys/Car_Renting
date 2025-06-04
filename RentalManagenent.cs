@@ -42,14 +42,14 @@ namespace WinFormsApp1
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text != "" && txtModel.Text != "" && txtRent.Text != "" && txtRent.Text != "" && toCarDate.Text != "" && fromCarDate.Text != "")
+            if (txtCustname.Text != "" && txtModel.Text != "" && txtRent.Text != "" && txtRent.Text != "" && toCarDate.Text != "" && fromCarDate.Text != "")
             {
                 con.Open();
 
                 // Duplication Check
                 string checkQuery = "SELECT COUNT(*) FROM rentalManagement WHERE custFullName = @fullname and carModel = @model";
                 SqlCommand checkCmd = new SqlCommand(checkQuery, con);
-                checkCmd.Parameters.AddWithValue("@fullname", txtUsername.Text);
+                checkCmd.Parameters.AddWithValue("@fullname", txtCustname.Text);
                 checkCmd.Parameters.AddWithValue("@model", txtModel.Text);
                 int exists = (int)checkCmd.ExecuteScalar();
                 if (exists > 0)
@@ -62,7 +62,7 @@ namespace WinFormsApp1
                 // Data Insertion 
                 string qry = "insert into rentalManagement (custFullName,carModel,fromDate,toDate,rentBill) values (@custFullName,@carModel,@fromDate,@toDate,@rentBill)";
                 cmd = new SqlCommand(qry, con);
-                cmd.Parameters.AddWithValue("custFullName", txtUsername.Text);
+                cmd.Parameters.AddWithValue("custFullName", txtCustname.Text);
                 cmd.Parameters.AddWithValue("carModel", txtModel.Text);
                 cmd.Parameters.AddWithValue("fromDate", fromCarDate.Value.Date);
                 cmd.Parameters.AddWithValue("toDate", toCarDate.Value.Date);
@@ -72,13 +72,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("Customer Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Customer Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("Customer Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Details", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -92,7 +96,7 @@ namespace WinFormsApp1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text != "" && txtModel.Text != "" && txtRent.Text != "" && toCarDate.Text != "" && fromCarDate.Text != "")
+            if (txtCustname.Text != "" && txtModel.Text != "" && txtRent.Text != "" && toCarDate.Text != "" && fromCarDate.Text != "")
             {
                 con.Open();
                 int id = Convert.ToInt32(txtId.Text);
@@ -103,19 +107,23 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("Customer Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Customer Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("Customer Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Details", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void clearData()
         {
             txtId.Clear();
-            txtUsername.Clear();
+            txtCustname.Clear();
             txtModel.Clear();
             txtRent.Clear();
         }
@@ -133,7 +141,7 @@ namespace WinFormsApp1
             dataGridView1.DataSource = dt;
 
             // Renaming Column Names
-            dataGridView1.Columns["custFullName"].HeaderText = "Username";
+            dataGridView1.Columns["custFullName"].HeaderText = "Customer Name";
             dataGridView1.Columns["carModel"].HeaderText = "Car Model";
             dataGridView1.Columns["fromDate"].HeaderText = "From Date";
             dataGridView1.Columns["toDate"].HeaderText = "To Date";
@@ -165,7 +173,7 @@ namespace WinFormsApp1
             int index = e.RowIndex;
             DataGridViewRow dgr = dataGridView1.Rows[index];
             txtId.Text = dgr.Cells[0].Value.ToString();
-            txtUsername.Text = dgr.Cells[1].Value.ToString();
+            txtCustname.Text = dgr.Cells[1].Value.ToString();
             txtModel.Text = dgr.Cells[2].Value.ToString();
             fromCarDate.Text = dgr.Cells[3].Value.ToString();
             toCarDate.Text = dgr.Cells[4].Value.ToString();

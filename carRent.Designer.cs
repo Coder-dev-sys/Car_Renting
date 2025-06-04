@@ -119,7 +119,7 @@
             groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 530);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1123, 1299);
+            groupBox1.Size = new Size(1123, 1432);
             groupBox1.TabIndex = 17;
             groupBox1.TabStop = false;
             // 
@@ -283,7 +283,7 @@
             btnBack.BackColor = Color.Crimson;
             btnBack.Font = new Font("Trebuchet MS", 11.1F);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(641, 1132);
+            btnBack.Location = new Point(641, 1226);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(326, 130);
             btnBack.TabIndex = 11;
@@ -296,7 +296,7 @@
             btnBook.BackColor = Color.FromArgb(63, 81, 181);
             btnBook.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBook.ForeColor = Color.Beige;
-            btnBook.Location = new Point(114, 1132);
+            btnBook.Location = new Point(114, 1226);
             btnBook.Margin = new Padding(3, 4, 3, 4);
             btnBook.Name = "btnBook";
             btnBook.Size = new Size(326, 130);
@@ -440,7 +440,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1123, 1299);
+            dataGridView1.Size = new Size(1123, 1432);
             dataGridView1.TabIndex = 16;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellMouseEnter += dataGridView1_CellMouseEnter;
@@ -450,7 +450,7 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2308, 1913);
+            ClientSize = new Size(2308, 2091);
             Controls.Add(panel1);
             Controls.Add(groupBox1);
             Controls.Add(dataGridView1);

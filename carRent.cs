@@ -39,8 +39,8 @@ namespace WinFormsApp1
             panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
 
             // Vertically center
-            groupBox1.Top = (this.ClientSize.Height + groupBox1.Height) / 6;
-            dataGridView1.Top = (this.ClientSize.Height + groupBox1.Height) / 6;
+            groupBox1.Top = (this.ClientSize.Height + groupBox1.Height) / 7;
+            dataGridView1.Top = (this.ClientSize.Height + groupBox1.Height) / 7;
             panel1.Top = (this.ClientSize.Height - panel1.Height) / 11;
         }
 
@@ -147,7 +147,20 @@ namespace WinFormsApp1
                 return;
             }
 
-            // Check if same booking already exists
+            // Check if vehicle is available or not
+            con.Open();
+            string chkAvailabilityQuery = "select availability from carManagement where model = @carModel";
+            cmd = new SqlCommand(chkAvailabilityQuery, con);
+            cmd.Parameters.AddWithValue("@carModel", txtModel.Text);
+            string availability = cmd.ExecuteScalar()?.ToString();
+            con.Close();
+            if (availability != null && availability.ToLower() != "available")
+            {
+                MessageBox.Show("This vehicle is currently not Available!", "Not Available", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check if same booking already exists or not
             con.Open();
             string checkQuery = @"select count(*) from rentalManagement where custFullName = (select fullName from userManagement where userName = @userName) and carModel = @carModel";
             cmd = new SqlCommand(checkQuery, con);
@@ -157,21 +170,19 @@ namespace WinFormsApp1
             con.Close();
             if (exists > 0)
             {
-                MessageBox.Show("You have already booked this vehicle.", "Duplicate Booking", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You have already booked this vehicle !", "Duplicate Booking", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Step 3: Insert booking
+            // Insert booking
             con.Open();
             string insertQuery = @"insert into rentalManagement (custFullName, carModel, fromDate, toDate, rentBill) select fullName, @carModel, @fromDate, @toDate, @rentBill from userManagement where userName = @userName";
-
             cmd = new SqlCommand(insertQuery, con);
             cmd.Parameters.AddWithValue("@carModel", txtModel.Text);
             cmd.Parameters.AddWithValue("@fromDate", fromCarDate.Value.Date);
             cmd.Parameters.AddWithValue("@toDate", toCarDate.Value.Date);
             cmd.Parameters.AddWithValue("@rentBill", lblBill.Text.Replace("₹", ""));
             cmd.Parameters.AddWithValue("@userName", loggedInUserName);
-
             int i = cmd.ExecuteNonQuery();
             if (i == 1)
             {

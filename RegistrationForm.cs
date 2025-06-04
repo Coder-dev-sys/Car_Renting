@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("Username or Password already registered!", "Duplicate Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     con.Close();
-                    return; 
+                    return;
                 }
 
                 // Data Insertion 
@@ -61,6 +61,10 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("Registered Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Not Registered !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 clearData();
 
                 // Redirecting To Login page
@@ -71,7 +75,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Fill All Details !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Details !", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void clearData()
@@ -92,6 +96,11 @@ namespace WindowsFormsApp1
             this.Hide();
             fm.ShowDialog();
             this.Close();
+        }
+
+        private void RegistrationForm_Load(object sender, EventArgs e)
+        {
+            txtFullName.Focus();
         }
     }
 }

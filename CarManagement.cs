@@ -34,8 +34,8 @@ namespace WinFormsApp1
             panel1.Left = (this.ClientSize.Width - panel1.Width) / 2;
 
             // Vertically center
-            groupBox1.Top = (this.ClientSize.Height + groupBox1.Height) / 6;
-            dataGridView1.Top = (this.ClientSize.Height + groupBox1.Height) / 6;
+            groupBox1.Top = (this.ClientSize.Height + groupBox1.Height) / 7;
+            dataGridView1.Top = (this.ClientSize.Height + groupBox1.Height) / 7;
             panel1.Top = (this.ClientSize.Height - panel1.Height) / 11;
         }
 
@@ -70,13 +70,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("Vehicle Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Vehicle Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("Vehicle Not Added", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Vehicle Details !", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -96,13 +100,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("Vehicle Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Vehicle Not Updated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("Vehicle Not Updated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Vehicle Details !", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,13 +138,17 @@ namespace WinFormsApp1
                 {
                     MessageBox.Show("Vehicle Deleted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Vehicle Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 con.Close();
                 clearData();
                 loadData();
             }
             else
             {
-                MessageBox.Show("Vehicle Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill All Vehicle Details !", "Missing Info.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

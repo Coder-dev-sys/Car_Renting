@@ -65,11 +65,11 @@
             btnBack.BackColor = Color.Crimson;
             btnBack.Font = new Font("Trebuchet MS", 11.1F);
             btnBack.ForeColor = SystemColors.Control;
-            btnBack.Location = new Point(402, 1267);
+            btnBack.Location = new Point(402, 1159);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(345, 93);
             btnBack.TabIndex = 11;
-            btnBack.Text = "Back To Dashboard";
+            btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
@@ -115,7 +115,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1123, 1388);
+            dataGridView1.Size = new Size(1123, 1287);
             dataGridView1.TabIndex = 13;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellMouseEnter += dataGridView1_CellMouseEnter;
@@ -147,7 +147,7 @@
             groupBox1.Font = new Font("Trebuchet MS", 20.1F, FontStyle.Bold);
             groupBox1.Location = new Point(12, 523);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1123, 1388);
+            groupBox1.Size = new Size(1123, 1287);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             // 
@@ -187,7 +187,7 @@
             btnClear.BackColor = Color.FromArgb(63, 81, 181);
             btnClear.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClear.ForeColor = Color.Beige;
-            btnClear.Location = new Point(409, 1105);
+            btnClear.Location = new Point(409, 998);
             btnClear.Margin = new Padding(3, 4, 3, 4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(326, 130);
@@ -201,7 +201,7 @@
             btnDelete.BackColor = Color.FromArgb(63, 81, 181);
             btnDelete.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDelete.ForeColor = Color.Beige;
-            btnDelete.Location = new Point(777, 943);
+            btnDelete.Location = new Point(777, 839);
             btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(326, 130);
@@ -215,7 +215,7 @@
             btnUpdate.BackColor = Color.FromArgb(63, 81, 181);
             btnUpdate.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpdate.ForeColor = Color.Beige;
-            btnUpdate.Location = new Point(409, 943);
+            btnUpdate.Location = new Point(409, 839);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(326, 130);
@@ -229,7 +229,7 @@
             btnInsert.BackColor = Color.FromArgb(63, 81, 181);
             btnInsert.Font = new Font("Trebuchet MS", 11.1F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInsert.ForeColor = Color.Beige;
-            btnInsert.Location = new Point(15, 943);
+            btnInsert.Location = new Point(15, 839);
             btnInsert.Margin = new Padding(3, 4, 3, 4);
             btnInsert.Name = "btnInsert";
             btnInsert.Size = new Size(326, 130);
