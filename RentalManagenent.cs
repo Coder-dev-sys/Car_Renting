@@ -14,7 +14,7 @@ namespace WinFormsApp1
         public RentalManagenent()
         {
             InitializeComponent();
-            con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db1.mdf;Integrated Security=True;");
+            con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\Project\Car Renting\WinFormsApp1\db1.mdf';Integrated Security=True");
 
             CenterGroupBox();
             this.Resize += (s, e) => CenterGroupBox();
