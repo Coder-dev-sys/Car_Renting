@@ -223,6 +223,16 @@
     <Content Include="Database1_log.ldf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="screenshots\admin dashboard screen.png" />
+    <Content Include="screenshots\booking screen.png" />
+    <Content Include="screenshots\car management screen.png" />
+    <Content Include="screenshots\login screen.png" />
+    <Content Include="screenshots\my bookings screen.png" />
+    <Content Include="screenshots\payment screen.png" />
+    <Content Include="screenshots\registration screen.png" />
+    <Content Include="screenshots\rental management screen.png" />
+    <Content Include="screenshots\revenue screen.png" />
+    <Content Include="screenshots\user management screen.png" />
     <None Include="Resources\qr.png" />
     <None Include="Resources\ATM.jpg" />
     <None Include="Resources\gpay.png" />
