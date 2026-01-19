@@ -1,6 +1,6 @@
 ﻿namespace final
 {
-    partial class userManagement
+    partial class rentalManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblnouser = new System.Windows.Forms.Label();
+            this.lblnorental = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtCarModel = new System.Windows.Forms.TextBox();
+            this.txtRentPerDay = new System.Windows.Forms.TextBox();
+            this.fromDate = new System.Windows.Forms.DateTimePicker();
+            this.toDate = new System.Windows.Forms.DateTimePicker();
+            this.txtBill = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.txtUsernm = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.revenuebtn = new System.Windows.Forms.Button();
@@ -70,44 +73,47 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(396, 169);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(857, 481);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.groupBox2.Controls.Add(this.lblnouser);
+            this.groupBox2.Controls.Add(this.lblnorental);
             this.groupBox2.Controls.Add(this.btnClear);
-            this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.txtPwd);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.txtUsername);
+            this.groupBox2.Controls.Add(this.txtCarModel);
+            this.groupBox2.Controls.Add(this.txtRentPerDay);
+            this.groupBox2.Controls.Add(this.fromDate);
+            this.groupBox2.Controls.Add(this.toDate);
+            this.groupBox2.Controls.Add(this.txtBill);
             this.groupBox2.Controls.Add(this.btnInsert);
-            this.groupBox2.Controls.Add(this.txtUsernm);
-            this.groupBox2.Controls.Add(this.txtId);
-            this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(6, 14);
+            this.groupBox2.Location = new System.Drawing.Point(11, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(845, 428);
-            this.groupBox2.TabIndex = 28;
+            this.groupBox2.Size = new System.Drawing.Size(852, 428);
+            this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             // 
-            // lblnouser
+            // lblnorental
             // 
-            this.lblnouser.AutoSize = true;
-            this.lblnouser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblnouser.ForeColor = System.Drawing.Color.Red;
-            this.lblnouser.Location = new System.Drawing.Point(530, 181);
-            this.lblnouser.Name = "lblnouser";
-            this.lblnouser.Size = new System.Drawing.Size(161, 30);
-            this.lblnouser.TabIndex = 34;
-            this.lblnouser.Text = "No User Found";
+            this.lblnorental.AutoSize = true;
+            this.lblnorental.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblnorental.ForeColor = System.Drawing.Color.Red;
+            this.lblnorental.Location = new System.Drawing.Point(513, 186);
+            this.lblnorental.Name = "lblnorental";
+            this.lblnorental.Size = new System.Drawing.Size(180, 30);
+            this.lblnorental.TabIndex = 34;
+            this.lblnorental.Text = "No Rental Found";
             // 
             // btnClear
             // 
@@ -116,27 +122,15 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClear.Location = new System.Drawing.Point(196, 363);
+            this.btnClear.Location = new System.Drawing.Point(195, 378);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(92, 40);
-            this.btnClear.TabIndex = 31;
+            this.btnClear.TabIndex = 21;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
             this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.label20.Location = new System.Drawing.Point(15, 19);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(172, 25);
-            this.label20.TabIndex = 30;
-            this.label20.Text = "+ Add / Edit Users";
             // 
             // dataGridView1
             // 
@@ -160,30 +154,93 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.Location = new System.Drawing.Point(372, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(361, 24);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(8);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 60;
-            this.dataGridView1.RowTemplate.Height = 50;
+            this.dataGridView1.RowTemplate.Height = 60;
             this.dataGridView1.Size = new System.Drawing.Size(474, 365);
-            this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseEnter);
             this.dataGridView1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellMouseLeave);
             // 
-            // txtPwd
+            // label20
             // 
-            this.txtPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPwd.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtPwd.ForeColor = System.Drawing.Color.Gray;
-            this.txtPwd.Location = new System.Drawing.Point(40, 251);
-            this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(215, 29);
-            this.txtPwd.TabIndex = 17;
-            this.txtPwd.Text = "Password";
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.label20.Location = new System.Drawing.Point(15, 19);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(188, 25);
+            this.label20.TabIndex = 30;
+            this.label20.Text = "+ Add / Edit Rentals";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtUsername.Location = new System.Drawing.Point(40, 72);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(215, 29);
+            this.txtUsername.TabIndex = 14;
+            this.txtUsername.Tag = "";
+            this.txtUsername.Text = "Username";
+            // 
+            // txtCarModel
+            // 
+            this.txtCarModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCarModel.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtCarModel.ForeColor = System.Drawing.Color.Gray;
+            this.txtCarModel.Location = new System.Drawing.Point(40, 122);
+            this.txtCarModel.Name = "txtCarModel";
+            this.txtCarModel.Size = new System.Drawing.Size(215, 29);
+            this.txtCarModel.TabIndex = 15;
+            this.txtCarModel.Text = "Car Model";
+            // 
+            // txtRentPerDay
+            // 
+            this.txtRentPerDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRentPerDay.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtRentPerDay.ForeColor = System.Drawing.Color.Gray;
+            this.txtRentPerDay.Location = new System.Drawing.Point(40, 272);
+            this.txtRentPerDay.Name = "txtRentPerDay";
+            this.txtRentPerDay.Size = new System.Drawing.Size(215, 29);
+            this.txtRentPerDay.TabIndex = 18;
+            this.txtRentPerDay.Text = "Rent Per Day";
+            // 
+            // fromDate
+            // 
+            this.fromDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.fromDate.Location = new System.Drawing.Point(40, 172);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(215, 29);
+            this.fromDate.TabIndex = 16;
+            this.fromDate.Value = new System.DateTime(2024, 1, 1, 5, 57, 0, 0);
+            // 
+            // toDate
+            // 
+            this.toDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.toDate.Location = new System.Drawing.Point(40, 222);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(215, 29);
+            this.toDate.TabIndex = 17;
+            this.toDate.Value = new System.DateTime(2024, 1, 2, 6, 35, 0, 0);
+            // 
+            // txtBill
+            // 
+            this.txtBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBill.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtBill.ForeColor = System.Drawing.Color.Gray;
+            this.txtBill.Location = new System.Drawing.Point(40, 322);
+            this.txtBill.Name = "txtBill";
+            this.txtBill.Size = new System.Drawing.Size(215, 29);
+            this.txtBill.TabIndex = 19;
+            this.txtBill.Text = "Rent Bill";
             // 
             // btnInsert
             // 
@@ -192,56 +249,33 @@
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsert.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnInsert.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInsert.Location = new System.Drawing.Point(20, 363);
+            this.btnInsert.Location = new System.Drawing.Point(20, 378);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(92, 40);
-            this.btnInsert.TabIndex = 21;
+            this.btnInsert.TabIndex = 20;
             this.btnInsert.Text = "Save";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             this.btnInsert.MouseEnter += new System.EventHandler(this.btnInsert_MouseEnter);
             this.btnInsert.MouseLeave += new System.EventHandler(this.btnInsert_MouseLeave);
             // 
-            // txtUsernm
-            // 
-            this.txtUsernm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsernm.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtUsernm.ForeColor = System.Drawing.Color.Gray;
-            this.txtUsernm.Location = new System.Drawing.Point(40, 182);
-            this.txtUsernm.Name = "txtUsernm";
-            this.txtUsernm.Size = new System.Drawing.Size(215, 29);
-            this.txtUsernm.TabIndex = 16;
-            this.txtUsernm.Text = "Username";
-            // 
             // txtId
             // 
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtId.Enabled = false;
-            this.txtId.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtId.ForeColor = System.Drawing.Color.Gray;
-            this.txtId.Location = new System.Drawing.Point(40, 302);
+            this.txtId.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(92, 31);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(182, 29);
+            this.txtId.Size = new System.Drawing.Size(182, 23);
             this.txtId.TabIndex = 26;
             this.txtId.Visible = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.ForeColor = System.Drawing.Color.Gray;
-            this.txtEmail.Location = new System.Drawing.Point(40, 113);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(215, 29);
-            this.txtEmail.TabIndex = 15;
-            this.txtEmail.Text = "Email ID";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(122, 16);
+            this.label8.Location = new System.Drawing.Point(60, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 18);
             this.label8.TabIndex = 25;
@@ -253,29 +287,12 @@
             this.label1.AutoSize = true;
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 16);
+            this.label1.Location = new System.Drawing.Point(22, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 18);
             this.label1.TabIndex = 24;
             this.label1.Text = "ID";
             this.label1.Visible = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(755, 54);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(92, 40);
-            this.btnDelete.TabIndex = 34;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.btnDelete.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
-            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
             // 
             // btnUpdate
             // 
@@ -287,12 +304,29 @@
             this.btnUpdate.Location = new System.Drawing.Point(637, 54);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(92, 40);
-            this.btnUpdate.TabIndex = 33;
+            this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Edit";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             this.btnUpdate.MouseEnter += new System.EventHandler(this.btnUpdate_MouseEnter);
             this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete.Location = new System.Drawing.Point(755, 54);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(92, 40);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
+            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
             // 
             // panel1
             // 
@@ -311,18 +345,18 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(77, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 589);
-            this.panel1.TabIndex = 14;
+            this.panel1.Size = new System.Drawing.Size(313, 588);
+            this.panel1.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(25, 403);
+            this.label3.Location = new System.Drawing.Point(25, 401);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 37);
-            this.label3.TabIndex = 18;
+            this.label3.TabIndex = 17;
             this.label3.Text = "💹";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -333,10 +367,10 @@
             this.revenuebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.revenuebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.revenuebtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.revenuebtn.Location = new System.Drawing.Point(12, 399);
+            this.revenuebtn.Location = new System.Drawing.Point(12, 398);
             this.revenuebtn.Name = "revenuebtn";
-            this.revenuebtn.Size = new System.Drawing.Size(284, 45);
-            this.revenuebtn.TabIndex = 17;
+            this.revenuebtn.Size = new System.Drawing.Size(284, 44);
+            this.revenuebtn.TabIndex = 16;
             this.revenuebtn.Text = "Revenue";
             this.revenuebtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.revenuebtn.UseVisualStyleBackColor = false;
@@ -394,7 +428,7 @@
             this.btnUserMng2.Text = "User Management";
             this.btnUserMng2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUserMng2.UseVisualStyleBackColor = false;
-            this.btnUserMng2.Click += new System.EventHandler(this.btnUserMng2_Click);
+            this.btnUserMng2.Click += new System.EventHandler(this.btnUserMng_Click);
             this.btnUserMng2.MouseEnter += new System.EventHandler(this.btnUserMng2_MouseEnter);
             this.btnUserMng2.MouseLeave += new System.EventHandler(this.btnUserMng2_MouseLeave);
             // 
@@ -429,7 +463,7 @@
             this.btnRentalMng2.Text = "Rental Management";
             this.btnRentalMng2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRentalMng2.UseVisualStyleBackColor = false;
-            this.btnRentalMng2.Click += new System.EventHandler(this.btnRentalMng2_Click);
+            this.btnRentalMng2.Click += new System.EventHandler(this.btnRentalMng_Click);
             this.btnRentalMng2.MouseEnter += new System.EventHandler(this.btnRentalMng2_MouseEnter);
             this.btnRentalMng2.MouseLeave += new System.EventHandler(this.btnRentalMng2_MouseLeave);
             // 
@@ -459,7 +493,7 @@
             this.btnVehicleMng2.Text = "Car Management";
             this.btnVehicleMng2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVehicleMng2.UseVisualStyleBackColor = false;
-            this.btnVehicleMng2.Click += new System.EventHandler(this.btnVehicleMng2_Click);
+            this.btnVehicleMng2.Click += new System.EventHandler(this.btnVehicleMng_Click);
             this.btnVehicleMng2.MouseEnter += new System.EventHandler(this.btnVehicleMng2_MouseEnter);
             this.btnVehicleMng2.MouseLeave += new System.EventHandler(this.btnVehicleMng2_MouseLeave);
             // 
@@ -478,12 +512,12 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.lblBack);
-            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Location = new System.Drawing.Point(396, 62);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(857, 101);
-            this.panel2.TabIndex = 16;
+            this.panel2.TabIndex = 15;
             // 
             // lblBack
             // 
@@ -498,7 +532,7 @@
             this.lblBack.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
-            // userManagement
+            // rentalManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -507,11 +541,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "userManagement";
+            this.Name = "rentalManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.userManagement_Load);
+            this.Load += new System.EventHandler(this.rentalManagement_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -529,13 +563,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.TextBox txtUsernm;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtBill;
+        private System.Windows.Forms.TextBox txtCarModel;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.DateTimePicker toDate;
+        private System.Windows.Forms.TextBox txtRentPerDay;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label16;
@@ -548,13 +585,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblBack;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DateTimePicker fromDate;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label lblnouser;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblnorental;
         private System.Windows.Forms.Button revenuebtn;
         private System.Windows.Forms.Label label3;
     }

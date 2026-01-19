@@ -1,6 +1,6 @@
 ﻿namespace final
 {
-    partial class adminDashboard
+    partial class revenue
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblBack = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.revenuebtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,25 +45,24 @@
             this.btnVehicleMng2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUserMng = new System.Windows.Forms.Button();
-            this.btnRentalMng = new System.Windows.Forms.Button();
-            this.btnVehicleMng = new System.Windows.Forms.Button();
+            this.revbtn = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.revenuebtn);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -71,22 +74,73 @@
             this.panel1.Controls.Add(this.btnVehicleMng2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(77, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 579);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(313, 601);
+            this.panel1.TabIndex = 4;
             // 
-            // label12
+            // panel2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Emoji", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(26, 399);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 37);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "💹";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.lblBack);
+            this.panel2.Location = new System.Drawing.Point(317, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(857, 101);
+            this.panel2.TabIndex = 15;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete.Location = new System.Drawing.Point(755, 54);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(92, 40);
+            this.btnDelete.TabIndex = 35;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpdate.Location = new System.Drawing.Point(637, 54);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(92, 40);
+            this.btnUpdate.TabIndex = 34;
+            this.btnUpdate.Text = "Edit";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Font = new System.Drawing.Font("Segoe UI Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.Black;
+            this.lblBack.Location = new System.Drawing.Point(31, 21);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(45, 47);
+            this.lblBack.TabIndex = 14;
+            this.lblBack.Text = "<";
+            this.lblBack.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(23, 397);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 37);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "💹";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // revenuebtn
             // 
@@ -95,14 +149,14 @@
             this.revenuebtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.revenuebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.revenuebtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.revenuebtn.Location = new System.Drawing.Point(12, 393);
+            this.revenuebtn.Location = new System.Drawing.Point(12, 395);
             this.revenuebtn.Name = "revenuebtn";
-            this.revenuebtn.Size = new System.Drawing.Size(284, 49);
-            this.revenuebtn.TabIndex = 16;
+            this.revenuebtn.Size = new System.Drawing.Size(284, 44);
+            this.revenuebtn.TabIndex = 14;
             this.revenuebtn.Text = "Revenue";
             this.revenuebtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.revenuebtn.UseVisualStyleBackColor = false;
-            this.revenuebtn.Click += new System.EventHandler(this.revenuebtn_Click);
+            this.revenuebtn.Click += new System.EventHandler(this.revenue_Click);
             this.revenuebtn.MouseEnter += new System.EventHandler(this.revenuebtn_MouseEnter);
             this.revenuebtn.MouseLeave += new System.EventHandler(this.revenuebtn_MouseLeave);
             // 
@@ -239,171 +293,113 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnUserMng);
-            this.groupBox1.Controls.Add(this.btnRentalMng);
-            this.groupBox1.Controls.Add(this.btnVehicleMng);
+            this.groupBox1.Controls.Add(this.revbtn);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(331, 12);
+            this.groupBox1.Location = new System.Drawing.Point(397, 173);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(709, 578);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(857, 490);
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(505, 259);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 25);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Total Users : ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Gray;
-            this.label10.Location = new System.Drawing.Point(295, 262);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 25);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Total Rentals : ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label9.Location = new System.Drawing.Point(503, 204);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 37);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "👤";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label8.Location = new System.Drawing.Point(293, 204);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 37);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "⚙";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(87, 262);
+            this.label7.Location = new System.Drawing.Point(279, 202);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 25);
+            this.label7.Size = new System.Drawing.Size(196, 32);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Total Cars : ";
+            this.label7.Text = "Total Revenue : ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label6.Location = new System.Drawing.Point(85, 204);
+            this.label6.Location = new System.Drawing.Point(406, 141);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 37);
+            this.label6.Size = new System.Drawing.Size(69, 50);
             this.label6.TabIndex = 7;
-            this.label6.Text = "🚕";
+            this.label6.Text = "💸";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(250, 38);
+            this.label1.Location = new System.Drawing.Point(342, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 37);
+            this.label1.Size = new System.Drawing.Size(198, 37);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Admin Dashboard";
+            this.label1.Text = "Total Revenue";
             // 
-            // btnUserMng
+            // revbtn
             // 
-            this.btnUserMng.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnUserMng.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnUserMng.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserMng.ForeColor = System.Drawing.Color.Black;
-            this.btnUserMng.Location = new System.Drawing.Point(490, 194);
-            this.btnUserMng.Name = "btnUserMng";
-            this.btnUserMng.Size = new System.Drawing.Size(195, 174);
-            this.btnUserMng.TabIndex = 12;
-            this.btnUserMng.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnUserMng.UseVisualStyleBackColor = false;
-            this.btnUserMng.Click += new System.EventHandler(this.btnUserMng_Click);
+            this.revbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.revbtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.revbtn.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revbtn.ForeColor = System.Drawing.Color.Black;
+            this.revbtn.Location = new System.Drawing.Point(265, 122);
+            this.revbtn.Name = "revbtn";
+            this.revbtn.Size = new System.Drawing.Size(345, 302);
+            this.revbtn.TabIndex = 10;
+            this.revbtn.UseVisualStyleBackColor = false;
             // 
-            // btnRentalMng
+            // panel3
             // 
-            this.btnRentalMng.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRentalMng.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnRentalMng.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRentalMng.ForeColor = System.Drawing.Color.Black;
-            this.btnRentalMng.Location = new System.Drawing.Point(279, 194);
-            this.btnRentalMng.Name = "btnRentalMng";
-            this.btnRentalMng.Size = new System.Drawing.Size(195, 174);
-            this.btnRentalMng.TabIndex = 11;
-            this.btnRentalMng.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRentalMng.UseVisualStyleBackColor = false;
-            this.btnRentalMng.Click += new System.EventHandler(this.btnRentalMng_Click);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(397, 62);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(857, 101);
+            this.panel3.TabIndex = 15;
             // 
-            // btnVehicleMng
+            // label9
             // 
-            this.btnVehicleMng.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnVehicleMng.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnVehicleMng.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVehicleMng.ForeColor = System.Drawing.Color.Black;
-            this.btnVehicleMng.Location = new System.Drawing.Point(69, 194);
-            this.btnVehicleMng.Name = "btnVehicleMng";
-            this.btnVehicleMng.Size = new System.Drawing.Size(195, 174);
-            this.btnVehicleMng.TabIndex = 10;
-            this.btnVehicleMng.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnVehicleMng.UseVisualStyleBackColor = false;
-            this.btnVehicleMng.Click += new System.EventHandler(this.btnVehicleMng_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(31, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 47);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "<";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // adminDashboard
+            // revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1034, 628);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1263, 709);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBox1);
-            this.Name = "adminDashboard";
+            this.Controls.Add(this.panel1);
+            this.Name = "revenue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.adminDashboard_Load);
+            this.Load += new System.EventHandler(this.revenue_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -411,28 +407,27 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnUserMng;
-        private System.Windows.Forms.Button btnRentalMng;
-        private System.Windows.Forms.Button btnVehicleMng;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnUserMng2;
-        private System.Windows.Forms.Button btnRentalMng2;
-        private System.Windows.Forms.Button btnVehicleMng2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUserMng2;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnRentalMng2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnVehicleMng2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button revbtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button revenuebtn;
-        private System.Windows.Forms.Label label12;
-
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label9;
     }
 }

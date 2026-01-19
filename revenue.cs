@@ -12,61 +12,30 @@ using System.Data.Sql;
 
 namespace final
 {
-    public partial class adminDashboard : Form
+    public partial class revenue : Form
     {
         SqlConnection con;
-       
-        public adminDashboard()
+        public revenue()
         {
-            InitializeComponent();
             con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Github Projects\Car Renting\WinFormsApp1\Database1.mdf;Integrated Security=True;Encrypt=False");
-            centerGroupBox();
-            this.Resize += (s, e) => centerGroupBox();
+            InitializeComponent();
         }
-
-        private void centerGroupBox()
-        {
-            //Horizontally Center
-            groupBox1.Left = (this.ClientSize.Width + groupBox1.Width) / 4;
-            panel1.Left = (this.ClientSize.Width - panel1.Width) / 5;
-
-            //Vertically Center
-            groupBox1.Top = (this.ClientSize.Height - groupBox1.Height) / 2;
-            panel1.Top = (this.ClientSize.Height - panel1.Height) / 2;
-        }
-
-        // Row Counter UDF's
-        private int getCarCount()
+        private int getRevenue()
         {
             int count = 0;
-            
-            String qry = "select count(*) from carManagement";
-           
+            string qry = "select sum(TotalBilling) from rentalManagement where PaymentStatus='Paid'";
             SqlCommand cmd = new SqlCommand(qry, con);
             con.Open();
             count = (int)cmd.ExecuteScalar();
             con.Close();
             return count;
         }
-        private int getCustCount()
+        private void revenue_Click(object sender, EventArgs e)
         {
-            int count = 0;
-            String qry = "select count(*) from rentalManagement";
-            SqlCommand cmd = new SqlCommand(qry, con);
-            con.Open();
-            count = (int)cmd.ExecuteScalar();
-            con.Close();
-            return count;
-        }
-        private int getUserCount()
-        {
-            int count = 0;
-            String qry = "select count(*) from userManagement";
-            SqlCommand cmd = new SqlCommand(qry, con);
-            con.Open();
-            count = (int)cmd.ExecuteScalar();
-            con.Close();
-            return count;
+            revenue rev= new revenue();
+            this.Hide();
+            rev.ShowDialog();
+            this.Close();
         }
         private void btnVehicleMng_Click(object sender, EventArgs e)
         {
@@ -100,15 +69,13 @@ namespace final
             this.Close();
         }
 
-        private void adminDashboard_Load(object sender, EventArgs e)
+        private void revenue_Load(object sender, EventArgs e)
         {
-            btnVehicleMng.Text = Convert.ToString(getCarCount());
-            btnUserMng.Text = Convert.ToString(getUserCount());
-            btnRentalMng.Text = Convert.ToString(getCustCount());
-            btnVehicleMng2.Focus();
-        }
+            revbtn.Text=Convert.ToString(getRevenue());
 
-        /*  btnVehicleMng2 Hover */
+            revenuebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+        }
         private void btnVehicleMng2_MouseEnter(object sender, EventArgs e)
         {
             btnVehicleMng2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -134,12 +101,11 @@ namespace final
             label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
         }
 
-
         /*  btnUserMng2 Hover */
         private void btnUserMng2_MouseLeave(object sender, EventArgs e)
         {
             btnUserMng2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+           label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
         }
 
         private void btnUserMng2_MouseEnter(object sender, EventArgs e)
@@ -159,24 +125,25 @@ namespace final
             btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
         }
 
-        private void revenuebtn_Click(object sender, EventArgs e)
-        {
-            revenue rev = new revenue();
-            this.Hide();
-            rev.ShowDialog();
-            this.Close();
-        }
-
+        /*  revenuebtn Hover */
         private void revenuebtn_MouseEnter(object sender, EventArgs e)
         {
-            revenuebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            revenuebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(129)))), ((int)(((byte)(191)))));
+            label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(129)))), ((int)(((byte)(191)))));
         }
 
         private void revenuebtn_MouseLeave(object sender, EventArgs e)
         {
-            revenuebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            revenuebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            adminDashboard ad = new adminDashboard();
+            this.Hide();
+            ad.ShowDialog();
+            this.Close();
+        }  
     }
 }
