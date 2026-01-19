@@ -1,6 +1,6 @@
 ﻿# 🚗 Car Renting
 
-![Visual Studio](https://img.shields.io/badge/Built%20With-Visual%20Studio%202022-blueviolet?logo=visualstudio)
+![Visual Studio](https://img.shields.io/badge/Built%20With-Visual%20Studio%202026-blueviolet?logo=visualstudio)
 ![.NET](https://img.shields.io/badge/.NET-WinForms-orange?logo=dotnet)
 ![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-red?logo=microsoftsqlserver)
 ![License: Free](https://img.shields.io/badge/license-Educational-lightgrey)
@@ -10,34 +10,41 @@
 ---
 
 ## ✨ Features
-- **User Side :**  
-  - **Registration & Login**  
-    - New users will have to register with a unique username/password (no duplicates will be allowed).  
-    - Registered users can log in to access the booking interface.  
-  - **Vehicle Listing & Booking**  
-    - Available vehicles are displayed in The List.  
-    - By clicking a vehicle row will auto-populate booking fields (Vehicle ID, Brand, Model, etc).  
-    - Users have to select “From Date” and “To Date” before booking and the app calculates total days and total bill automatically.  
-    - Real-time availability check: if a vehicle is unavailable, booking is blocked and an error message is shown.  
 
-- **Admin Side :**  
-  - **Fixed Admin Login**  
-    - Username: `admin`  
-    - Password: `admin123@`  
-    - Successful login opens the Admin Dashboard.  
-  - **Dashboard with Counters**  
-    - Three main buttons which even displays record counts: 
-    1. **Vehicle Management**
-        - View all registered vehicles.  
-        - Add new vehicles (Brand, Model, Rent Per Day, Availability).  
-        - Edit or delete or clear existing vehicles. 
-    2. **User Management**  
-        - View all registered users.  
-        - Insert or Edit user accounts.    
-    3. **Rental Management**  
-        - View all bookings (Booking ID, Customer Name, Vehicle Model, From/To dates, Total Bill).
-        - Insert or Cancel bookings as completed.  
+### **User Side**
+- **🔐 Registration & Authentication**
+  - **Comprehensive Registration:** New users must register with full details including Name, Email, Residential Address, Mobile Number, Username, and Password (no duplicates will be allowed).
+  - **Auto-Redirection:** Upon successful registration, users are automatically redirected to the Login screen. Once logged in, they are taken directly to the Booking Interface.
 
+- **🚙 Booking Workflow**
+  - **Category-Based Selection:** Users start by selecting a vehicle category (e.g., **Sedan, Luxury, SUV, Pick-Drop**).
+  - **Date & Availability Check:**
+    - A dedicated Date Panel opens to select "From Date" and "To Date".
+    - The system filters the fleet and displays only those vehicles available for the selected dates.
+  - **Invoice Generation:**
+    - Clicking "Book Now" generates an instant invoice displaying **Car Model**, **Total Days** and **Total Bill** etc.
+    - Clicking "Submit" confirms the booking and adds it to the **"My Bookings"** section.
+
+- **💳 Payments & History**
+  - **My Bookings:** A dedicated section where users can view their booking history.
+  - **Action Buttons:** Users can choose to either **Pay** or **Cancel** a booking.
+  - **Dummy Payment Gateway:**
+    - If "Pay Now" is selected, a simulation payment screen appears.
+    - Supports two payment modes: **Debit/ Credit Card** OR **UPI/ QR**.
+
+### **Admin Side**
+- **🛡️ Admin Dashboard**
+  - **Fixed Login:** Secure access via credentials (Username: `admin`, Password: `admin123`).
+  - **Central Hub:** The admin dashboard serves as the main controller, linking to all management subsystems.
+
+- **🛠️ Management Modules (CRUD)**
+  - **Car Management:** Full control to Add, Update, Delete, or View vehicles in the fleet.
+  - **User Management:** Monitor and manage registered user accounts.
+  - **Rental Management:** Oversee all active and past rental records.
+
+- **💰 Revenue Analytics**
+  - **Revenue Section:** A Dedicated screen that calculates and displays the **Total Revenue** generated from all completed bookings.
+    
 ---
 
 ## 📦 Tech Stack
@@ -58,21 +65,21 @@
    ```
 
 2. **Open in Visual Studio 2022**
-   - Load the `Car_Renting.sln` file.
+   - Load the `final.sln` file.
 
 3. **Update SQL Connection**
    - Replace the local connection string path with yours inside the code.
 
 4. **Tables**
  
-| Name             | Column                                                       |
-|------------------|--------------------------------------------------------------|
-| carManegement    | Id , brand , model , rentPerDay , availability               |
-| userManagement   | Id , fullName , mobileNo , address , userName , password     |
-| rentalManagement | Id , custFullName , carModel , fromDate , toDate , rentBill  |
+| Name             | Column                                                                                                |
+|------------------|-------------------------------------------------------------------------------------------------------|
+| carManegement    | Id , brand , model , rentPerDay , availability , type , ImagePath                                     |
+| userManagement   | Id , fullName , mobileNo , email , address , userName , password                                      |
+| rentalManagement | Id , CarModel , TotalDays , FromDate , ToDate , RentPerDay , TotalBilling , PaymentStatus , username  |
 
 5. **Run the Project**
-   - Press `F5` or click `Start`.
+   - Press `ctrl + F5` or click `Start`.
 
 > ⚠️ *Ensure SQL Server is installed and the required tables exist. You may need to create them manually based on code.*
 
